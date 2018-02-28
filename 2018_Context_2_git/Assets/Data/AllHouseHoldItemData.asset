@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7c371865cbdcc9499ac8204bd47ccdd, type: 3}
+  m_Name: AllHouseHoldItemData
+  m_EditorClassIdentifier: 
+  data:
+  - prefab: {fileID: 1592693614543412, guid: 0d00283f08ad6f242afe9f0ba768137d, type: 2}
+    name: name
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 0
