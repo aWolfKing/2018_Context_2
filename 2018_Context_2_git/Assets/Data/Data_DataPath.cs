@@ -20,7 +20,9 @@ public static class Data_DataPath {
     public static string PathRelativeToAssets{
         get{
             if(pathFromAssets == ""){
-                pathFromAssets = Path.Replace(System.IO.Path.GetFullPath(System.IO.Path.Combine(Application.dataPath, @"..\")), "");
+                UnityEngine.Debug.Log(Path.Replace(System.IO.Path.GetFullPath(System.IO.Directory.GetParent(Application.dataPath).FullName), ""));
+                pathFromAssets = Path.Replace(System.IO.Path.GetFullPath(System.IO.Directory.GetParent(Application.dataPath).FullName.Replace(@"..\","")), "");
+                pathFromAssets = pathFromAssets.Substring(1,pathFromAssets.Length-1);
             }
             return pathFromAssets;
         }
@@ -28,7 +30,7 @@ public static class Data_DataPath {
 
     private static string GetPathToThis(){
         StackFrame frame = new StackFrame(1, true);
-        return System.IO.Path.GetFullPath(System.IO.Path.Combine(frame.GetFileName(), @"..\"));
+        return System.IO.Path.GetFullPath(System.IO.Directory.GetParent(frame.GetFileName()).FullName);
     }
 
 }
