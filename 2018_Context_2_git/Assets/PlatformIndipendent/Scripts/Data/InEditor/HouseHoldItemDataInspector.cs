@@ -7,7 +7,35 @@ using UnityEditor;
 [CustomEditor(typeof(AllHouseHoldItemData))]
 public class HouseHoldItemDataInspector : Editor {
 
+    public delegate void onSelectionMade(HouseHoldItemData d);
+
     private Vector2 scroll = Vector2.zero;
+    private float scrolHeight = 200;
+    //private HouseHoldItemData dataToRemove = null;
+
+    private static onSelectionMade onSelectionFinish = null;
+    private static Editor thisEditor = null;
+
+
+    public static void RequestSelection(onSelectionMade selectionMade){
+        onSelectionFinish = selectionMade;
+        thisEditor.Repaint();
+    }
+    private void SelectionMade(HouseHoldItemData houseHoldItemData){
+        if(onSelectionFinish != null){
+            onSelectionFinish(houseHoldItemData);
+        }
+    }
+
+
+    private void OnEnable() {
+        thisEditor = this;
+    }
+    private void OnDestroy() {
+        onSelectionFinish = null;
+        thisEditor = null;
+    }
+
 
     public override void OnInspectorGUI() {
         AllHouseHoldItemData targ = (AllHouseHoldItemData)target;
@@ -16,11 +44,17 @@ public class HouseHoldItemDataInspector : Editor {
 
         Undo.RegisterCompleteObjectUndo(targ, "Changed House hold item data");
 
+        Rect sliderRect = EditorGUILayout.BeginHorizontal();
+        EditorGUILayout.EndHorizontal();
+        sliderRect.height = 10;
+        sliderRect.position -= new Vector2(10, 12);
+        sliderRect.width += 65;
+
         Rect r = EditorGUILayout.BeginHorizontal();
         EditorGUILayout.EndHorizontal();
         r.height = EditorGUIUtility.singleLineHeight;
 
-        Rect scrollRect = new Rect() { width = r.width+18, height = 200, position = new Vector2(0,50)};
+        Rect scrollRect = new Rect() { width = r.width+18, height = scrolHeight /*200*/, position = new Vector2(0,50)};
         Rect viewRect = new Rect() { width = scrollRect.width-15, height = (70 * (targ.data.Count+1)) + 2};
 
         GUI.Box(new Rect(0, scrollRect.position.y-1, scrollRect.width + EditorGUIUtility.singleLineHeight*2, scrollRect.height+2), "");
@@ -37,8 +71,9 @@ public class HouseHoldItemDataInspector : Editor {
             itemRect.width -= 1;
             itemRect.position += new Vector2(1, 1);
             */
-
+            
             for(int i=0; i<targ.data.Count; i++){
+
                 if(i >= targ.data.Count){ break; }
                 itemY = i * 70;
 
@@ -58,6 +93,7 @@ public class HouseHoldItemDataInspector : Editor {
                 EditorGUI.ProgressBar(removeRect, 1, "x");
                 if(GUI.Button(removeRect, "", GUIStyle.none)){
                     targ.data.Remove(targ.data[i]);
+                    //dataToRemove = targ.data[i];
                     break;
                 }
 
@@ -97,7 +133,23 @@ public class HouseHoldItemDataInspector : Editor {
                 descriptionRect.position += new Vector2(160, 0);
                 descriptionRect.height = 58;
 
-                targ.data[i].description = EditorGUI.TextArea(descriptionRect, targ.data[i].description);
+                if (onSelectionFinish == null) {
+                    targ.data[i].description = EditorGUI.TextArea(descriptionRect, targ.data[i].description);
+                }
+                else{
+                    Rect buttonRect = descriptionRect;
+                    buttonRect.height = 18;
+                    buttonRect.position += new Vector2(0, 12);
+                    if(GUI.Button(buttonRect, "Select this", EditorStyles.toolbarButton)){
+                        SelectionMade(targ.data[i]);
+                        break;
+                    }
+                    buttonRect.position += new Vector2(0, 18);
+                    if(GUI.Button(buttonRect, "Cancel selecting", EditorStyles.toolbarButton)){
+                        onSelectionFinish = null;
+                        break;
+                    }
+                }
 
 
                 { 
@@ -189,7 +241,9 @@ public class HouseHoldItemDataInspector : Editor {
 
                 EditorGUI.ProgressBar(itemRect, 1, "new");
                 if(GUI.Button(itemRect, "", GUIStyle.none)){
-                    targ.data.Add(new HouseHoldItemData(targ));
+                    var nItem = new HouseHoldItemData(targ);
+                    nItem.standardEffectRadius = 100;
+                    targ.data.Add(nItem);
                 }
 
             }
@@ -198,7 +252,10 @@ public class HouseHoldItemDataInspector : Editor {
         EditorStyles.toolbar.fixedHeight = heightWas;
         GUI.EndScrollView(true);
 
+        scrolHeight = EditorGUI.Slider(sliderRect, scrolHeight, 200, 700);
+
     }
+
 
 }
 #endif

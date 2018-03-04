@@ -11,9 +11,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7c371865cbdcc9499ac8204bd47ccdd, type: 3}
   m_Name: AllHouseHoldItemData
   m_EditorClassIdentifier: 
+  categories:
+  - not in store
   data:
   - prefab: {fileID: 1592693614543412, guid: 0d00283f08ad6f242afe9f0ba768137d, type: 2}
     name: name
+    category: 0
     description: description
     purchaseCost: 0
     electricityUsage: 0
@@ -21,4 +24,11 @@ MonoBehaviour:
     repairCost: 0
     upgradesToId: -1
     upgradeCost: 0
-    standardEffectRadius: 0
+    standardEffectRadius: 100
+    affectedObjects:
+    - affectedObjectId: -1
+      summerElectricityPercentage: 0
+      fallElectricityPercentage: 0
+      winterElectricityPercentage: 0
+      springElectricityPercentage: 0
+      effectRadius: 100

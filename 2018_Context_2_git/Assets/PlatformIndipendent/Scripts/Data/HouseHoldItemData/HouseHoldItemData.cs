@@ -13,6 +13,7 @@ public class HouseHoldItemData {
     public GameObject prefab = null;
 
     public string name = "name";
+    public int category = 0;
     public string description = "description";
 
     public float purchaseCost = 0;
@@ -47,7 +48,7 @@ public class HouseHoldItemData {
     } 
 
 
-    public int standardEffectRadius = 0;
+    public float standardEffectRadius = 100;
     public List<AffectsObject> affectedObjects = new List<AffectsObject>();
 
     [System.Serializable]
@@ -57,6 +58,7 @@ public class HouseHoldItemData {
         public float fallElectricityPercentage = 0;
         public float winterElectricityPercentage = 0;
         public float springElectricityPercentage = 0;
+        public float effectRadius = 0;
     }
 
 

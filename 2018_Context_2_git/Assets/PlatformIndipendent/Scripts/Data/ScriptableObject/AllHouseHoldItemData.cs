@@ -5,6 +5,8 @@ using UnityEngine;
 [CreateAssetMenu]
 public class AllHouseHoldItemData : ScriptableObject {
 
+    public List<string> categories = new List<string>() { "not in store"};
+
     public List<HouseHoldItemData> data = new List<HouseHoldItemData>();	
 
     public HouseHoldItemData GetDataFromID(int id){
