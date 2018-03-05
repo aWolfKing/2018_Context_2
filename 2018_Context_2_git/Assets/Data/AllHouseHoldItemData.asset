@@ -26,9 +26,21 @@ MonoBehaviour:
     upgradeCost: 0
     standardEffectRadius: 100
     affectedObjects:
-    - affectedObjectId: -1
+    - affectedObjectId: 716
       summerElectricityPercentage: 0
       fallElectricityPercentage: 0
       winterElectricityPercentage: 0
       springElectricityPercentage: 0
       effectRadius: 100
+  - prefab: {fileID: 1844994875577360, guid: 17f8e69155c4d684bb55045789698390, type: 2}
+    name: name
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: 0
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []

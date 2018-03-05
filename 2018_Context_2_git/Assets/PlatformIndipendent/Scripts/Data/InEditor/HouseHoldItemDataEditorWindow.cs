@@ -133,6 +133,14 @@ public class HouseHoldItemDataEditorWindow : EditorWindow {
                     xRect.position += new Vector2(45 - 20, 45 - 14);
                     GUI.Label(xRect, "none");
                 }
+                if(GUI.Button(previewRect, "", GUIStyle.none)){
+                    var a = currentEditing;
+                    HouseHoldItemDataInspector.RequestSelection(
+                        (HouseHoldItemData d) => {
+                            a.upgradesToId = d.ID;
+                        }
+                    );
+                }
 
                 upgradeText = previewRect;
                 upgradeText.height = 18;
@@ -268,12 +276,29 @@ public class HouseHoldItemDataEditorWindow : EditorWindow {
                     }
 
                     Rect affectedObject = new Rect() { width = 62, height = 62, position = itemRect.position + new Vector2(4, 4) };
-                    GUI.Box(affectedObject, "");
+
+                    Texture objTxt = null;
+                    var obj = Data.GetDataFromID(currentEditing.affectedObjects[i].affectedObjectId);
+                    if(obj != null){
+                        objTxt = AssetPreview.GetAssetPreview(obj.prefab);
+                    }
+
+                    if (objTxt != null) {
+                        GUI.Box(affectedObject, objTxt);
+                    }
+                    else {
+                        GUI.Box(affectedObject, "");
+                        if(obj == null){
+                            GUI.Label(affectedObject, "none");
+                        }
+                    }
+
                     if (GUI.Button(affectedObject, "", GUIStyle.none)) {
+                        var a = currentEditing.affectedObjects[i];
                         HouseHoldItemDataInspector.RequestSelection(
                             (HouseHoldItemData d) => {
                                 Undo.RegisterCompleteObjectUndo(Data, "Changed House hold item data");
-                                currentEditing.affectedObjects[i].affectedObjectId = d.ID;
+                                a.affectedObjectId = d.ID;
                             }
                         );
                     }

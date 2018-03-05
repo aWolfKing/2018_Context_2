@@ -25,6 +25,7 @@ public class HouseHoldItemDataInspector : Editor {
         if(onSelectionFinish != null){
             onSelectionFinish(houseHoldItemData);
         }
+        onSelectionFinish = null;
     }
 
 
