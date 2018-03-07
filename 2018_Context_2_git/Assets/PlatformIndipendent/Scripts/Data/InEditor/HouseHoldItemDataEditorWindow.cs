@@ -42,9 +42,9 @@ public class HouseHoldItemDataEditorWindow : EditorWindow {
 
     private static void ScrollToTabs(){
         if(!stopwatch.IsRunning){ stopwatch.Start(); }
-        if(stopwatch.ElapsedMilliseconds >= 3.33f){
+        if(stopwatch.ElapsedMilliseconds >= 3.33f*2f){
             stopwatch.Reset();
-            fSelectedTab = Mathf.MoveTowards(fSelectedTab, selectedTab, 0.033f * Mathf.Abs(selectedTabWas-selectedTab));
+            fSelectedTab = Mathf.MoveTowards(fSelectedTab, selectedTab, 0.033f*2f * Mathf.Abs(selectedTabWas-selectedTab));
             thisWindow.Repaint();
         }
     }
