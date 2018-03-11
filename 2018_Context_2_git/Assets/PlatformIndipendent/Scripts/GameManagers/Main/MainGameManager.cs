@@ -13,6 +13,15 @@ public class MainGameManager : MonoBehaviour {
     [SerializeField] private AllHouseHoldItemData allHouseHoldItemData = null;
     public static AllHouseHoldItemData Data{
         get{
+            _this = GameObject.FindObjectOfType<MainGameManager>();
+            if (_this == null) {
+                GameObject obj = new GameObject("GameManager");
+                obj.transform.position = Vector3.zero;
+                _this = obj.AddComponent<MainGameManager>();
+            }
+            if(_this.allHouseHoldItemData == null){
+                Debug.LogError(@"Please create a ""MainGameManager"" and assign ""allHouseHoldItemData"".");
+            }
             return _this.allHouseHoldItemData;
         }
     }
@@ -23,7 +32,7 @@ public class MainGameManager : MonoBehaviour {
         }
     }
 
-
+    
     [RuntimeInitializeOnLoadMethod]
     private static void Init(){
         _this = GameObject.FindObjectOfType<MainGameManager>();
@@ -33,6 +42,7 @@ public class MainGameManager : MonoBehaviour {
             _this = obj.AddComponent<MainGameManager>();
         }
     }
+    
     
     public static void AddObject(HouseHoldItem_monobehaviour obj){
         if(!allObjects.Contains(obj)){

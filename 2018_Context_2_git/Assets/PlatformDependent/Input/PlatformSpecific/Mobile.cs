@@ -28,7 +28,7 @@ public static partial class InputManager {
 
 
 
-    [RuntimeInitializeOnLoadMethod]
+    //[RuntimeInitializeOnLoadMethod]
     private static void WakeUpMobileInput(){
         Updater.OnUpdate += UpdateMobileInput;
     }
