@@ -6,7 +6,9 @@ public class HouseHoldItem_monobehaviour : MonoBehaviour {
 
     private float influencePercent = 0;
     [System.NonSerialized] private HouseHoldItemData houseHoldItemData = null;
-    [SerializeField][HideInInspector] private int houseHoldItemDataID = 0;
+    [SerializeField]
+    //[HideInInspector] 
+    private int houseHoldItemDataID = 0;
     public HouseHoldItemData HouseHoldItemData{
         get{
             return MainGameManager.Data.GetDataFromID(houseHoldItemDataID);

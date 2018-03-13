@@ -12,10 +12,24 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         public AnimationCurve xPositionAnimation;
         public float animationDuration = 0.6f;
         public Dropdown categoryDropDown;
+        public void FixedUpdate(){ }
+    }
+
+    [System.Serializable]
+    public class InterfaceOptions{
+        public Text seasonText;
+        public Text cashText;
+        public Text seasonCountText;
+        public void FixedUpdate(){
+            seasonText.text = MainGameManager.CurrentSeason.ToString();
+            cashText.text = "Cash : " + MainGameManager.Cash;
+            seasonCountText.text = "Seasons survived : " + MainGameManager.SeasonsSurvived;
+        }
     }
 
 
     [SerializeField] private ShopOptions shopOptions = new ShopOptions();
+    [SerializeField] private InterfaceOptions interfaceOptions = new InterfaceOptions();
 
     private void OnEnable() {
 
@@ -29,6 +43,12 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         }
 
     }
+
+    private void FixedUpdate() {
+        shopOptions.FixedUpdate();
+        interfaceOptions.FixedUpdate();
+    }
+
 
     public void OpenShop(){
         StartCoroutine(OpenOrCloseShop(-1));

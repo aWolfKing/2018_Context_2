@@ -32,7 +32,26 @@ public class MainGameManager : MonoBehaviour {
         }
     }
 
-    
+    [SerializeField] private float incomePerSeason = 1000;
+
+    [SerializeField] private float m_cash = 0;
+    public static float Cash{
+        get{
+            return _this.m_cash;
+        }
+        set{
+            _this.m_cash = value;
+        }
+    }
+
+    [SerializeField] private int seasonsSurvived = 0;
+    public static int SeasonsSurvived{
+        get{
+            return _this.seasonsSurvived;
+        }
+    }
+
+
     [RuntimeInitializeOnLoadMethod]
     private static void Init(){
         _this = GameObject.FindObjectOfType<MainGameManager>();
@@ -41,6 +60,7 @@ public class MainGameManager : MonoBehaviour {
             obj.transform.position = Vector3.zero;
             _this = obj.AddComponent<MainGameManager>();
         }
+
     }
     
     
@@ -63,50 +83,102 @@ public class MainGameManager : MonoBehaviour {
             o.ResetInfluence();
         }
 
-        HouseHoldItem_monobehaviour currObject = allObjects[0];
-        for(int i=0; i<allObjects.Count; i++, currObject = allObjects[i]){
-            var affectedObjects = currObject.HouseHoldItemData.affectedObjects;
+        if (allObjects.Count > 0) {
 
-            List<int> affectedIDs = new List<int>();
-            foreach(var aO in affectedObjects){ affectedIDs.Add(aO.affectedObjectId); }
+            HouseHoldItem_monobehaviour currObject = allObjects[0];
+            for (int i = 0; i < allObjects.Count; i++, currObject = (allObjects.Count > i ? allObjects[i] : null)) {
 
-            HouseHoldItem_monobehaviour otherObject = allObjects[0];
-            for(int o=0; o<allObjects.Count; o++, otherObject = allObjects[o]){
-                if(currObject != otherObject){
-                    if(affectedIDs.Contains(otherObject.HouseHoldItemData.ID)){
+                if(currObject == null){ continue; }
 
-                        var effect = affectedObjects[affectedIDs.IndexOf(otherObject.HouseHoldItemData.ID)];
-                        if(Vector3.Distance(currObject.transform.position, otherObject.transform.position) <= effect.effectRadius){
+                var affectedObjects = currObject.HouseHoldItemData.affectedObjects;
 
-                            switch(CurrentSeason){
-                                case Season.Summer:
-                                    otherObject.AddInfluence(effect.summerElectricityPercentage);
-                                    break;
-                                case Season.Fall:
-                                    otherObject.AddInfluence(effect.fallElectricityPercentage);
-                                    break;
-                                case Season.Winter:
-                                    otherObject.AddInfluence(effect.winterElectricityPercentage);
-                                    break;
-                                case Season.Spring:
-                                    otherObject.AddInfluence(effect.springElectricityPercentage);
-                                    break;
+                List<int> affectedIDs = new List<int>();
+                foreach (var aO in affectedObjects) { affectedIDs.Add(aO.affectedObjectId); }
+
+                HouseHoldItem_monobehaviour otherObject = allObjects[0];
+                for (int o = 0; o < allObjects.Count; o++, otherObject = (allObjects.Count > o ? allObjects[o] : null)) {
+                    if (currObject != otherObject && otherObject != null) {
+                        if (affectedIDs.Contains(otherObject.HouseHoldItemData.ID)) {
+
+                            var effect = affectedObjects[affectedIDs.IndexOf(otherObject.HouseHoldItemData.ID)];
+                            if (Vector3.Distance(currObject.transform.position, otherObject.transform.position) <= effect.effectRadius) {
+
+                                switch (CurrentSeason) {
+                                    case Season.Summer:
+                                        otherObject.AddInfluence(effect.summerElectricityPercentage);
+                                        break;
+                                    case Season.Fall:
+                                        otherObject.AddInfluence(effect.fallElectricityPercentage);
+                                        break;
+                                    case Season.Winter:
+                                        otherObject.AddInfluence(effect.winterElectricityPercentage);
+                                        break;
+                                    case Season.Spring:
+                                        otherObject.AddInfluence(effect.springElectricityPercentage);
+                                        break;
+                                }
+
                             }
 
                         }
-
                     }
                 }
             }
-        }
 
-        foreach(var o in allObjects){
-            ret += o.CalculateTotalEnergyCost();
+            foreach (var o in allObjects) {
+                ret += o.CalculateTotalEnergyCost();
+            }
+
         }
 
         MonoBehaviour.print("This seasons energy cost: " + ret);
 
         return ret;
+    }
+
+
+    public void ContinueToNextSeason(){
+        MonoBehaviour.print("To next season");
+
+        float costs = CalculateEnergyCosts();
+
+        //costs times season multiplier?
+
+        Cash -= costs;
+
+        if (m_cash < 0) { GameOver(); }
+        else {
+
+            seasonsSurvived++;
+
+            switch (currentSeason) {
+                case Season.Fall:
+                    currentSeason = Season.Winter;
+                    break;
+                case Season.Winter:
+                    currentSeason = Season.Spring;
+                    break;
+                case Season.Spring:
+                    currentSeason = Season.Summer;
+                    break;
+                case Season.Summer:
+                    currentSeason = Season.Fall;
+                    break;
+            }
+
+            Cash += incomePerSeason;
+
+        }
+
+    }
+
+    public static void ToNextSeason(){
+        _this.ContinueToNextSeason();
+    }
+
+
+    public static void GameOver(){
+        MonoBehaviour.print("Game over... (implement this)");
     }
 
 }

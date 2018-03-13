@@ -63,6 +63,7 @@ public class HouseHoldItemDataEditorWindow : EditorWindow {
             Rect nameRect = widthRect;
             nameRect.height = 18;
             GUI.Box(nameRect, "");
+            EditorGUI.IntField(nameRect, currentEditing.ID);
 
             { 
 

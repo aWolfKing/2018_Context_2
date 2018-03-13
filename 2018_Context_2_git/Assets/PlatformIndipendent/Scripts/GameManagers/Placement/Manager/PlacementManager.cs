@@ -51,16 +51,22 @@ public class PlacementManager : MonoBehaviour {
         c2 = point + rotation * Vector3.right * width * -0.5f + rotation * Vector3.forward * depth * -0.5f;
         c3 = point + rotation * Vector3.right * width * -0.5f + rotation * Vector3.forward * depth * 0.5f;
         Vector3 middle = (c0 + c1 + c2 + c3) * 0.25f;
+        int dots_ = 0;
         foreach (var dot in _this.dots) {
             Vector3 d0 = (c0 - c3);
             Vector3 d1 = (c2 - c3);
             Vector3 l0 = Vector3.Project(dot.point - c3, d0.normalized);
             Vector3 l1 = Vector3.Project(dot.point - c3, d1.normalized);
             if (Vector3.Angle(d0, l0) <= 90 && Vector3.Angle(d1, l1) <= 90 && l0.magnitude <= d0.magnitude && l1.magnitude <= d1.magnitude) {
-                return false;
+                if(dot.used){ return false; }
+                else{
+                    dots_++;
+                }
+                //return false;
             }
         }
-        return true;
+        return dots_ > 0;
+        //return true;
     }
     public static bool CanPlace(List<PlacementFace.PlacementDot> d){
         foreach(var _d in d){ 
@@ -68,6 +74,7 @@ public class PlacementManager : MonoBehaviour {
                 return false;
             }
         }
+        if(d.Count == 0){ return false; }
         return true;
     }
 
