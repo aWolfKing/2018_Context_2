@@ -22,7 +22,7 @@ public class CameraControl : MonoBehaviour {
     private void Update() {
         zoom = Mathf.Clamp01(zoom + Input.GetAxis("Mouse ScrollWheel") * -8 * Time.smoothDeltaTime);
         yRot = (yRot + Input.GetAxis("Mouse X") * Input.GetAxis("Fire2") * Time.smoothDeltaTime * 100) % 360;
-        angle = Mathf.Clamp01(angle + Input.GetAxis("Mouse Y") * Input.GetAxis("Fire2") * Time.smoothDeltaTime);
+        angle = Mathf.Clamp01(angle + -1 * Input.GetAxis("Mouse Y") * Input.GetAxis("Fire2") * Time.smoothDeltaTime);
 
         Vector3 camAxis = transform.forward * -1;
         camera.transform.position = transform.position + Quaternion.Euler(Vector3.up * yRot) * (Quaternion.Euler(Vector3.right * Mathf.Lerp(minCameraAngle, maxCameraAngle, angle)) * camAxis) * Mathf.Lerp(minDistanceFromRoot, maxDistanceFromRoot, zoom);

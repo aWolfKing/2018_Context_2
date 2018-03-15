@@ -30,8 +30,12 @@ public class CanvasUI_Main_cs : MonoBehaviour {
 
     [SerializeField] private ShopOptions shopOptions = new ShopOptions();
     [SerializeField] private InterfaceOptions interfaceOptions = new InterfaceOptions();
+    private static CanvasUI_Main_cs _this = null;
+
 
     private void OnEnable() {
+
+        _this = this;
 
         /*Set category dropdown*/
         {
@@ -51,11 +55,33 @@ public class CanvasUI_Main_cs : MonoBehaviour {
 
 
     public void OpenShop(){
+        ShopManager.OnOpenShop();
         StartCoroutine(OpenOrCloseShop(-1));
     }
     public void CloseShop(){
+        ShopManager.OnOpenShop();
         StartCoroutine(OpenOrCloseShop(1));
     }
+
+
+    public static void RequestOpenShop() {
+        _this.OpenShop();
+    }
+
+    public static void RequestCloseShop(){
+        _this.CloseShop();
+    }
+
+
+
+    public void OnCategoryChanged(){
+        ShopManager.ChangeCategory(shopOptions.categoryDropDown.options[shopOptions.categoryDropDown.value].text);
+    }
+
+    public static string GetDefaultCategory(){
+        return _this.shopOptions.categoryDropDown.options[_this.shopOptions.categoryDropDown.value].text;
+    }
+
 
     /// <summary>
     /// 

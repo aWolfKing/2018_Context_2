@@ -1,1 +1,4 @@
-sceneSetups: []
+sceneSetups:
+- path: Assets/PlatformIndipendent/Scenes/TestScenes/TestScene_UI_and_Placement.unity
+  isLoaded: 1
+  isActive: 1
