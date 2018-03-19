@@ -51,6 +51,9 @@ public class MainGameManager : MonoBehaviour {
         }
     }
 
+    private List<OnNextSeason_monobehaviour> onSeasonChanges = new List<OnNextSeason_monobehaviour>();
+
+
 
     [RuntimeInitializeOnLoadMethod]
     private static void Init(){
@@ -72,6 +75,18 @@ public class MainGameManager : MonoBehaviour {
     public static void RemoveObject(HouseHoldItem_monobehaviour obj){
         if(allObjects.Contains(obj)){
             allObjects.Remove(obj);
+        }
+    }
+
+
+    public static void AddOnSeasonChange(OnNextSeason_monobehaviour m) {
+        if (!_this.onSeasonChanges.Contains(m)) {
+            _this.onSeasonChanges.Add(m);
+        }
+    }
+    public static void RemoveOnSeasonChange(OnNextSeason_monobehaviour m) {
+        if (_this.onSeasonChanges.Contains(m)) {
+            _this.onSeasonChanges.Remove(m);
         }
     }
 
@@ -140,6 +155,10 @@ public class MainGameManager : MonoBehaviour {
     public void ContinueToNextSeason(){
         MonoBehaviour.print("To next season");
 
+        foreach(var m in onSeasonChanges){
+            m.OnBeforeChange();
+        }
+
         float costs = CalculateEnergyCosts();
 
         //costs times season multiplier?
@@ -167,6 +186,10 @@ public class MainGameManager : MonoBehaviour {
             }
 
             Cash += incomePerSeason;
+
+            foreach (var m in onSeasonChanges) {
+                m.OnAfterChange();
+            }
 
         }
 

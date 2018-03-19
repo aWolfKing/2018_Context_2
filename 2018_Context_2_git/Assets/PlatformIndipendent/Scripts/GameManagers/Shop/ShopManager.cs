@@ -35,6 +35,7 @@ public class ShopManager : MonoBehaviour {
 
     [SerializeField] private Collider placementHelp = null;
 
+    private PlacementObject currentlyPlacing = null;
     private HouseHoldItem_monobehaviour currently_buying = null;
     public static bool IsPlacing{
         get{
@@ -193,6 +194,7 @@ public class ShopManager : MonoBehaviour {
         houseHoldItem.SetHouseHoldItemDataID(data.ID);
 
         _this.currently_buying = houseHoldItem;
+        _this.currentlyPlacing = placementObj;
 
         _this.StartCoroutine(_this.BuyCoroutine());
 
@@ -225,7 +227,7 @@ public class ShopManager : MonoBehaviour {
                     placementPos = hit.point + new Vector3(0, -placementHelpOffset, 0);
                 }
 
-                var placementDots = PlacementManager.GetPlacementDots(placementPos, currently_buying.transform.rotation, 1f, 1f);
+                var placementDots = PlacementManager.GetPlacementDots(placementPos, currently_buying.transform.rotation, currentlyPlacing.width, currentlyPlacing.depth);
 
                 if(placementDots.Count > 0){
                     currently_buying.transform.position = placementPos;

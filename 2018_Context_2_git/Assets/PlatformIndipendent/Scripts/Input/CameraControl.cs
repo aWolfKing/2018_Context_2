@@ -33,6 +33,13 @@ public class CameraControl : MonoBehaviour {
         }
     }
 
+    public static float Angle{
+        get{
+            return _this.angle;
+        }
+    }
+
+
 
     private void OnEnable() {
         _this = this;
