@@ -241,6 +241,7 @@ public class ShopManager : MonoBehaviour {
 
                     if(canPlace){
                         MainGameManager.Cash -= currently_buying.HouseHoldItemData.purchaseCost;
+                        currentlyPlacing.SetUsedDots(placementDots);
                         currently_buying.visualMaterial = HouseHoldItem_monobehaviour.VisualMaterial.normalMaterial;
                         currently_buying = null;
                         break;

@@ -44,6 +44,8 @@ public class CanvasUI_Main_cs : MonoBehaviour {
                 categories.Add(new Dropdown.OptionData(MainGameManager.Data.categories[i]));
             }
             shopOptions.categoryDropDown.options = categories;
+
+            shopOptions.categoryDropDown.onValueChanged.AddListener(OnCategoryChanged_UICallback);
         }
 
     }
@@ -76,6 +78,10 @@ public class CanvasUI_Main_cs : MonoBehaviour {
 
     public void OnCategoryChanged(){
         ShopManager.ChangeCategory(shopOptions.categoryDropDown.options[shopOptions.categoryDropDown.value].text);
+    }
+
+    private void OnCategoryChanged_UICallback(int category){
+        ShopManager.ChangeCategory(shopOptions.categoryDropDown.options[category].text);
     }
 
     public static string GetDefaultCategory(){
