@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class HouseHoldItem_monobehaviour : MonoBehaviour {
 
+    public enum VisualMaterial{
+        canPlace, cannotPlace, normalMaterial
+    }
+    public VisualMaterial visualMaterial = VisualMaterial.normalMaterial;
+
     private float influencePercent = 0;
     [System.NonSerialized] private HouseHoldItemData houseHoldItemData = null;
     [SerializeField]
@@ -22,6 +27,7 @@ public class HouseHoldItem_monobehaviour : MonoBehaviour {
     private void OnDisable() {
         MainGameManager.RemoveObject(this);
     }
+
 
     public void SetHouseHoldItemDataID(int id){
         houseHoldItemDataID = id;

@@ -19,6 +19,26 @@ public class CameraControl : MonoBehaviour {
                                                   angle = 0;
     [SerializeField] private float  yRot                = 0;
 
+    private static CameraControl _this = null;
+
+    public static Camera Camera{
+        get{
+            return _this.camera;            
+        }
+    }
+
+    public static Vector3 RootPosition{
+        get{
+            return _this.transform.position;
+        }
+    }
+
+
+    private void OnEnable() {
+        _this = this;
+    }
+
+
     private void Update() {
         zoom = Mathf.Clamp01(zoom + Input.GetAxis("Mouse ScrollWheel") * -8 * Time.smoothDeltaTime);
         yRot = (yRot + Input.GetAxis("Mouse X") * Input.GetAxis("Fire2") * Time.smoothDeltaTime * 100) % 360;

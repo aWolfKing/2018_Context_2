@@ -33,6 +33,15 @@ public class ShopManager : MonoBehaviour {
     private Dictionary<HouseHoldItemData, Button> canBuy = new Dictionary<HouseHoldItemData, Button>();
     private List<Transform> previews = new List<Transform>();
 
+    [SerializeField] private Collider placementHelp = null;
+
+    private HouseHoldItem_monobehaviour currently_buying = null;
+    public static bool IsPlacing{
+        get{
+            return _this.currently_buying != null;
+        }
+    }
+
 
     private void OnEnable() {
         _this = this;
@@ -182,6 +191,66 @@ public class ShopManager : MonoBehaviour {
         placementObj.depth = wd.y;
         var houseHoldItem = obj.AddComponent<HouseHoldItem_monobehaviour>();
         houseHoldItem.SetHouseHoldItemDataID(data.ID);
+
+        _this.currently_buying = houseHoldItem;
+
+        _this.StartCoroutine(_this.BuyCoroutine());
+
+    }
+
+
+    private IEnumerator BuyCoroutine(){
+        var wait = new WaitForEndOfFrame();
+        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+        stopwatch.Start();
+
+        string axis = "Fire1";
+        string rotateAxis = "Horizontal";
+        float rotateSpeed = 90f;
+
+        float placementHelpOffset = -100;
+        placementHelp.transform.position = CameraControl.RootPosition + new Vector3(0, placementHelpOffset, 0);
+
+        float inpWas = Input.GetAxis(axis);
+        do {
+
+            currently_buying.transform.Rotate(Vector3.up * Input.GetAxis(rotateAxis) * rotateSpeed * Time.smoothDeltaTime);
+
+            if(stopwatch.ElapsedMilliseconds >= 5){
+
+                var cameraRay = CameraControl.Camera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                Vector3 placementPos = currently_buying.transform.position;
+                if(placementHelp.Raycast(new Ray(cameraRay.origin + new Vector3(0, placementHelpOffset, 0), cameraRay.direction), out hit, Mathf.Abs(1000 * placementHelpOffset))){
+                    placementPos = hit.point + new Vector3(0, -placementHelpOffset, 0);
+                }
+
+                var placementDots = PlacementManager.GetPlacementDots(placementPos, currently_buying.transform.rotation, 1f, 1f);
+
+                if(placementDots.Count > 0){
+                    currently_buying.transform.position = placementPos;
+                }
+
+                var canPlace = PlacementManager.CanPlace(placementDots);
+                currently_buying.visualMaterial = canPlace ? HouseHoldItem_monobehaviour.VisualMaterial.canPlace : HouseHoldItem_monobehaviour.VisualMaterial.cannotPlace;
+
+
+                if(inpWas >= 0.5f && Input.GetAxis(axis) < 0.5f){
+
+                    if(canPlace){
+                        MainGameManager.Cash -= currently_buying.HouseHoldItemData.purchaseCost;
+                        currently_buying.visualMaterial = HouseHoldItem_monobehaviour.VisualMaterial.normalMaterial;
+                        currently_buying = null;
+                        break;
+                    }
+                }
+                stopwatch.Reset();
+                stopwatch.Start();
+            }
+            inpWas = Input.GetAxis(axis);
+            yield return wait;
+        }
+        while (currently_buying != null);
     }
 
 
