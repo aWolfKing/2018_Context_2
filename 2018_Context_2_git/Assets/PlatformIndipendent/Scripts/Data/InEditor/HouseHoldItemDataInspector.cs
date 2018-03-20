@@ -44,6 +44,7 @@ public class HouseHoldItemDataInspector : Editor {
         targ.AlertAll();
 
         Undo.RegisterCompleteObjectUndo(targ, "Changed House hold item data");
+        //Undo.RecordObject(targ, "Changed House hold item data");
 
         Rect sliderRect = EditorGUILayout.BeginHorizontal();
         EditorGUILayout.EndHorizontal();

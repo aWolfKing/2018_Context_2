@@ -10,7 +10,16 @@ public class ApplyAssetChanges {
     public static void ApplyChanges(){
         AssetDatabase.SaveAssets();
         AssetDatabase.Refresh();
+
+        if(Selection.activeObject != null){
+            AssetDatabase.ForceReserializeAssets(GetPathToSelection(), ForceReserializeAssetsOptions.ReserializeAssets);
+        }
+
     }    
+
+    private static IEnumerable<string> GetPathToSelection(){
+        yield return AssetDatabase.GetAssetPath(Selection.activeObject);
+    }
 
 }
 #endif

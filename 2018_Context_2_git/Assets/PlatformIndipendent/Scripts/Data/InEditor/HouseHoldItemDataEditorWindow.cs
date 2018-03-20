@@ -54,6 +54,7 @@ public class HouseHoldItemDataEditorWindow : EditorWindow {
         Data.AlertAll();
 
         Undo.RegisterCompleteObjectUndo(Data, "Changed House hold item data");
+        //Undo.RecordObject(Data, "Changed House hold item data");
 
         if (currentEditing != null){
 

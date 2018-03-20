@@ -72,3 +72,16 @@ MonoBehaviour:
     upgradeCost: 0
     standardEffectRadius: 100
     affectedObjects: []
+  - m_id: 253
+    prefab: {fileID: 100000, guid: 99deebd63a5a54b50b1ed14964635dbf, type: 3}
+    name: lajg
+    category: 0
+    description: alalalas
+    purchaseCost: 1331
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 2
+    upgradesToId: -1
+    upgradeCost: 22
+    standardEffectRadius: 100
+    affectedObjects: []
