@@ -1222,6 +1222,16 @@ Prefab:
       propertyPath: m_CullingMask.m_Bits
       value: 4294967007
       objectReference: {fileID: 0}
+    - target: {fileID: 114898108880202676, guid: d11f6c5cf768eaa45af94deb93af974d,
+        type: 2}
+      propertyPath: maxXPosOffset
+      value: 4.81
+      objectReference: {fileID: 0}
+    - target: {fileID: 114898108880202676, guid: d11f6c5cf768eaa45af94deb93af974d,
+        type: 2}
+      propertyPath: maxZPosOffset
+      value: 5.82
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d11f6c5cf768eaa45af94deb93af974d, type: 2}
   m_IsPrefabParent: 0
