@@ -13,6 +13,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   categories:
   - not in store
+  - Skeer
+  - "Sm\xF6ig"
+  - Anita Bath Sanitair
+  - River
+  - Joe & King Interiors
+  - Saniterra
+  - Ella Vator Electronics
+  - Nott & Allwright
+  - Lowe & Pryce
+  - Zweinstein Kitchen WitchBitches
+  - Dish It
   data:
   - m_id: 0
     prefab: {fileID: 1592693614543412, guid: 0d00283f08ad6f242afe9f0ba768137d, type: 2}
@@ -33,3 +44,557 @@ MonoBehaviour:
       winterElectricityPercentage: 0
       springElectricityPercentage: 0
       effectRadius: 100
+  - m_id: 874
+    prefab: {fileID: 100000, guid: 45339a5a7b00146629eadae984ecb630, type: 3}
+    name: Brown Couch
+    category: 1
+    description: 'This old lazy couch looks it has endured a war.. of cats?
+
+
+'
+    purchaseCost: 120
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 50
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 533
+    prefab: {fileID: 100000, guid: 62b0a7b8e9cac49ab86036875977e275, type: 3}
+    name: White Couch
+    category: 5
+    description: This beautiful fancy couch even has neck support.
+    purchaseCost: 140
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 50
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 877
+    prefab: {fileID: 100000, guid: ee0ae685c1ac74251840a1f9f4360511, type: 3}
+    name: Old Muffy Matras
+    category: 1
+    description: "You had trouble understanding the guy who sold this to you, \nso
+      you\u2019re not quite sure what horrors this bed might have witnessed, \nbut
+      it was a sale you just could not pass up.\n Just ignore the stains and you\u2019re
+      probably good. Probably.  "
+    purchaseCost: 20
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 20
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 261
+    prefab: {fileID: 100000, guid: dfc58877024d544b4a52a3b2d4d12c0b, type: 3}
+    name: Wooden Desk
+    category: 5
+    description: "This handy desk is probably where you spend most of your study\n
+      stressing the fuck out. You probably will work, eat, sleep, cry and slowly \ndestroying
+      your soul at this table. \nEspecially in combination with your laptop. "
+    purchaseCost: 70
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 20
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 1
+    prefab: {fileID: 100000, guid: 58fc43bd7f6e64a6d9a34ff0beff871a, type: 3}
+    name: Big Cactus
+    category: 0
+    description: "It doesn\u2019t require much water, it doesn\u2019t require attention
+      \nand it won\u2019t judge you if you forget about it for two months.  "
+    purchaseCost: 10
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 10
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 319
+    prefab: {fileID: 100000, guid: 4425e33df81f945a09d2670b08bd7c26, type: 3}
+    name: "J\xE4germeiser"
+    category: 0
+    description: 'This poisonous beverage could be your best friend or your worst
+      enemy,
+
+      if you treat him wisely..'
+    purchaseCost: 15
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 256
+    prefab: {fileID: 100000, guid: 8059bb87e56634bc980fdec800ebc4bd, type: 3}
+    name: Baileys
+    category: 0
+    description: "This sneaky liquid of sweetness coud very well go with a cup of
+      coffee. \nBut drink too much of this sweetness and you'd probably never want
+      to\ndrink this again.."
+    purchaseCost: 20
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 285
+    prefab: {fileID: 100000, guid: e392246719f9f4f60a2e87788e8e1fc8, type: 3}
+    name: Gin
+    category: 0
+    description: 'This delightful gin goes fanstastically with some tonic, especially
+
+      in the summer.'
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 826
+    prefab: {fileID: 100000, guid: 839516db172da4a4c8d376da780331e1, type: 3}
+    name: Whiskey
+    category: 0
+    description: If you want to burn like hell.
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 657
+    prefab: {fileID: 100000, guid: b304fbe8dc15945189c64392e1955181, type: 3}
+    name: Honey Whiskey
+    category: 0
+    description: "This honey whiskey is for all non - whiskey pussy's \nwho want to
+      look badass."
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 45
+    prefab: {fileID: 100000, guid: 7a78afb007cb54ae2ac170489767f160, type: 3}
+    name: Red Wine
+    category: 0
+    description: 'This red wine is the cheapest you can find. it is very disgusting
+      but when
+
+      you are already drunk even this wine is drinkable.'
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 843
+    prefab: {fileID: 100000, guid: 39a3c130e739a4c4a9e31ed58eb930f7, type: 3}
+    name: Glass
+    category: 0
+    description: "You are probably used to drink from the bottle. But maybe you should
+      \nconsider this glass if you want to offer your guests something to drink."
+    purchaseCost: 5
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 5
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 299
+    prefab: {fileID: 100000, guid: ab1fdb9069528483fa1360e7d8fbe342, type: 3}
+    name: Purple Carpet
+    category: 5
+    description: "This purple funky carpet reminds you of that odd aunt who's \nhouse
+      is all purple. Nice lady, but a bit crazy in the head. \n"
+    purchaseCost: 35
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 35
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 950
+    prefab: {fileID: 100000, guid: 3972990bf5f7345e99a50892c4a32720, type: 3}
+    name: Blue Carpet
+    category: 5
+    description: A nice rug to keep your feet warm.
+    purchaseCost: 30
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 30
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 743
+    prefab: {fileID: 100000, guid: dd101bbf085cd4154a2e397c21e268d8, type: 3}
+    name: Lamp
+    category: 8
+    description: Not sure if this lamp is super modern or just really ugly. Or both?
+    purchaseCost: 35
+    electricityUsage: 10
+    breakPercentage: 0
+    repairCost: 5
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 650
+    prefab: {fileID: 100000, guid: ce38e375236b244e0b7e0099ae6e8302, type: 3}
+    name: Laptop
+    category: 7
+    description: 'Does what your average laptop needs to do.  '
+    purchaseCost: 800
+    electricityUsage: 50
+    breakPercentage: 0
+    repairCost: 500
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 429
+    prefab: {fileID: 100000, guid: 51961f5d6885a4e82a34a33243028b34, type: 3}
+    name: Plant
+    category: 0
+    description: 'This green piece of nature sure will make your house more cozy.
+
+      It also makes the air in your sweaty muffy home more breathable.'
+    purchaseCost: 15
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 15
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 130
+    prefab: {fileID: 100000, guid: 5a80a1ab1036d42968cc06666dbce63b, type: 3}
+    name: Clock
+    category: 7
+    description: "This stressful countdown will make you feel that the time goes \nslower
+      if you keep looking at it."
+    purchaseCost: 30
+    electricityUsage: 5
+    breakPercentage: 0
+    repairCost: 15
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 135
+    prefab: {fileID: 100000, guid: c4a268c7a1b484ecab269efacb8b73fc, type: 3}
+    name: Wall Lamp
+    category: 0
+    description: Fancy lamp for at your bed, or couch, or where ever you want.
+    purchaseCost: 20
+    electricityUsage: 10
+    breakPercentage: 0
+    repairCost: 10
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 196
+    prefab: {fileID: 100000, guid: d33ea227b5d8c4b3f902ad28f5fe63df, type: 3}
+    name: Water Cooker
+    category: 7
+    description: For the lazy fucks.
+    purchaseCost: 15
+    electricityUsage: 15
+    breakPercentage: 0
+    repairCost: 15
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 964
+    prefab: {fileID: 100000, guid: 2faccd39ebee1408481fcf12eb622535, type: 3}
+    name: New Toilet
+    category: 6
+    description: This toilet is considered as a piece of heaven in the morning.
+    purchaseCost: 55
+    electricityUsage: 15
+    breakPercentage: 0
+    repairCost: 40
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 902
+    prefab: {fileID: 100000, guid: cc46f20b61a824b47a7189853936b152, type: 3}
+    name: Old Toilet
+    category: 3
+    description: "This 'toilet' does not sit that comfortable. The water container
+      \nis way to big and the water always keep running a bit."
+    purchaseCost: 35
+    electricityUsage: 30
+    breakPercentage: 0
+    repairCost: 50
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 357
+    prefab: {fileID: 100000, guid: caeadfd09c4cc40e5a91163260946fe3, type: 3}
+    name: Sink
+    category: 0
+    description: "The place where your evergrowing dishes will be staying. \n"
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 363
+    prefab: {fileID: 100000, guid: 3d2e933eb8d13496cb0022fcb0adcf6a, type: 3}
+    name: Fany Bed
+    category: 0
+    description: "A classy, stylish bed. You won\u2019t see the inside of it much
+      once \ndeadline season peeks around the corner, but when you do have time\n
+      for a good night\u2019s rest, this bed\u2019s got you covered"
+    purchaseCost: 400
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 100
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 59
+    prefab: {fileID: 100000, guid: f5469fea63e1e40c78895d9ef8ff2c99, type: 3}
+    name: Small Cactus
+    category: 0
+    description: "The perfect plant for those that can\u2019t\n even keep the mice
+      in the kitchen alive.  "
+    purchaseCost: 10
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 10
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 858
+    prefab: {fileID: 100000, guid: fc25ff6f7d1594148aab8a9b64af97c7, type: 3}
+    name: Dark Old Stove
+    category: 10
+    description: "This stove will murder your appetite faster than a hamster \nin
+      a meatgrinder, but if your goal is to merely survive, it\u2019ll do. \nBy this
+      point it\u2019s nearly ancient and sucks energy like its \nlife depends on it.
+      Which, now that we think about it, it kind of does. "
+    purchaseCost: 150
+    electricityUsage: 40
+    breakPercentage: 0
+    repairCost: 100
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 982
+    prefab: {fileID: 100000, guid: fc3fc40758aaa4cc38d753d9388e008b, type: 3}
+    name: New Stove
+    category: 0
+    description: "It saves energy, functions intuitively and is easy to keep clean;
+      what can\u2019t it do? "
+    purchaseCost: 300
+    electricityUsage: 20
+    breakPercentage: 0
+    repairCost: 150
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 153
+    prefab: {fileID: 100000, guid: 6ee1743184633451291da922cd60f7f6, type: 3}
+    name: Closet
+    category: 0
+    description: "A roomy closet for all your storage needs. \nA bit on the pricey
+      side, but it will probably last you a lifetime. "
+    purchaseCost: 100
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 15
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 728
+    prefab: {fileID: 100000, guid: 881da659184b041c4bc825d1b51580fb, type: 3}
+    name: New Big Refridgerator
+    category: 0
+    description: "Classy, shiny and tall. It\u2019s like a looming monolith of goodness,\n
+      keeping your food nice and fresh.  "
+    purchaseCost: 500
+    electricityUsage: 40
+    breakPercentage: 0
+    repairCost: 300
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 205
+    prefab: {fileID: 100000, guid: f16b8c32e51c64a3fa680a56cd32c5e8, type: 3}
+    name: New Small Refridgerator
+    category: 0
+    description: "A bit cheaper energy-wise than it\u2019s big brother, \nbut where
+      are you going to leave all that delicious chilled food now? "
+    purchaseCost: 200
+    electricityUsage: 20
+    breakPercentage: 0
+    repairCost: 100
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 683
+    prefab: {fileID: 100000, guid: 40dbade3d53d04891851e81a5e2fbf9e, type: 3}
+    name: Old Big Refridgerator
+    category: 10
+    description: "It hums menacingly while you sleep. \nIt might be sentient, might
+      not. It\u2019s like the door and hinges \nunderstand what \u2018opening\u2019
+      means, but just haven\u2019t quite internalized\n the concept yet. It uses up
+      so much energy that you\u2019re worried it uses \nit for more than just cooling
+      your food. \nIt's pretty affordable, though, and if you need to \nstore a fuck-ton
+      of food, this beast has got you covered. "
+    purchaseCost: 200
+    electricityUsage: 70
+    breakPercentage: 0
+    repairCost: 150
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 528
+    prefab: {fileID: 100000, guid: f5820b7d8ad3d4b3aabb4ddaf2a2f5c8, type: 3}
+    name: Old Small Refridgerator
+    category: 10
+    description: "Yes, it doesn\u2019t quite close as well as it used to, and yes,
+      there is a \npeculiar smell coming out of it, and yes, it\u2019s about as eco-friendly
+      \nas a victorian chimney, but hey: it\u2019s cheap. And in this life, you just
+      \ncan\u2019t have it all, man."
+    purchaseCost: 100
+    electricityUsage: 40
+    breakPercentage: 0
+    repairCost: 80
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 889
+    prefab: {fileID: 100000, guid: d78dec00d62e44e29a055f58f3432727, type: 3}
+    name: Single Glass Window
+    category: 0
+    description: "This window is definetely better than those holes you\n had when
+      you first arrived."
+    purchaseCost: 20
+    electricityUsage: 15
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 29
+    prefab: {fileID: 100000, guid: bf826c7910b934888af318e4b03de9d5, type: 3}
+    name: Double Glass Window
+    category: 0
+    description: 'This double-sided glass '
+    purchaseCost: 40
+    electricityUsage: 5
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 428
+    prefab: {fileID: 100000, guid: 37406987ab8804dbaad9053557e0db6e, type: 3}
+    name: Saloon Table
+    category: 0
+    description: This multifunctional table could be used as a board game or just
+      as a table.
+    purchaseCost: 40
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 10
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 171
+    prefab: {fileID: 100018, guid: 36a6a284d9c3b4714aafc8c40e25b098, type: 3}
+    name: Chair
+    category: 0
+    description: "A decent chair. We\u2019re not sure what else to say about it. \nIt\u2019s
+      a bit like that one teacher of yours; \ndependable, reliable, but utterly forgettable. "
+    purchaseCost: 25
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 10
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 331
+    prefab: {fileID: 100000, guid: cb7f700f79dbb4f309f9812e6cb13854, type: 3}
+    name: Dining Table
+    category: 0
+    description: Handy if guests are coming
+    purchaseCost: 80
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 20
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 829
+    prefab: {fileID: 100000, guid: 3168125bc7e6142deb33cd378a0dcf1c, type: 3}
+    name: TV
+    category: 7
+    description: Not quite HD, but functional and reliable. To a degree.
+    purchaseCost: 60
+    electricityUsage: 30
+    breakPercentage: 0
+    repairCost: 60
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 850
+    prefab: {fileID: 100000, guid: c5ba1e1279b9c4ea58af11cdff50b2ab, type: 3}
+    name: TV cabinet
+    category: 5
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
