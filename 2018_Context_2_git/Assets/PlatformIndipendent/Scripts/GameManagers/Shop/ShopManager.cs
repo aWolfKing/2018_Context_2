@@ -279,7 +279,7 @@ public class ShopManager : MonoBehaviour {
         List<Vector3> verts = GetVertices(o);
 
         for(int i=0; i<verts.Count; i++){
-            b.Encapsulate(o.transform.TransformPoint(verts[i]) - o.transform.position);
+            b.Encapsulate(verts[i]);
         }
 
         return b;
@@ -294,7 +294,7 @@ public class ShopManager : MonoBehaviour {
         if (c != null) {
             Vector3[] vrts = c.sharedMesh.vertices;
             for (int j = 0; j < vrts.Length; j++) {
-                ret.Add(o.transform.TransformPoint(vrts[j]));
+                ret.Add(o.transform.TransformPoint(vrts[j]) - o.transform.position);
             }
         }
         return ret;
