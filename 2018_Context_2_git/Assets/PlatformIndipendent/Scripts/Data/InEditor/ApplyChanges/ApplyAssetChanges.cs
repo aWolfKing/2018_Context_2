@@ -9,6 +9,7 @@ public class ApplyAssetChanges {
     [MenuItem("Assets/Apply changes")]
     public static void ApplyChanges(){
         AssetDatabase.SaveAssets();
+        AssetDatabase.Refresh();
     }    
 
 }

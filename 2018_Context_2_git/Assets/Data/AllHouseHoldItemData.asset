@@ -50,11 +50,24 @@ MonoBehaviour:
     prefab: {fileID: 100002, guid: 17ed043b32739dd41ba3883cd1b2c39e, type: 3}
     name: ole
     category: 0
-    description: description
-    purchaseCost: 0
+    description: b;lblbla
+    purchaseCost: 1
     electricityUsage: 0
     breakPercentage: 0
     repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 819
+    prefab: {fileID: 100000, guid: 42aaa261c7eb34c208fb3f91b2176676, type: 3}
+    name: fafaf
+    category: 0
+    description: aaadd
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 21221
     upgradesToId: -1
     upgradeCost: 0
     standardEffectRadius: 100
