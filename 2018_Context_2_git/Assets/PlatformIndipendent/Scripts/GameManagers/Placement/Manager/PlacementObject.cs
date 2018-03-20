@@ -10,7 +10,9 @@ public class PlacementObject : MonoBehaviour {
     public float    width = 1,
                     depth = 1;
     private List<PlacementFace.PlacementDot> usedDots = new List<PlacementFace.PlacementDot>();
-    
+
+    [SerializeField] private bool autoPlace = false;
+
     public void SetUsedDots(List<PlacementFace.PlacementDot> d){
         foreach(var dot in usedDots){
             dot.used = false;
@@ -34,12 +36,32 @@ public class PlacementObject : MonoBehaviour {
     }
 
 
-    #if UNITY_EDITOR
+    private void OnEnable() {
+        if(autoPlace){
+            //SetUsedDots(GetPlacementDots());
+            StartCoroutine(DelayedSetDots());
+        }
+        #if UNITY_EDITOR
+        StartCoroutine(Update20());
+        #endif
+    }
+
+    private void OnDisable() {
+        if(autoPlace){
+            SetUsedDots(new List<PlacementFace.PlacementDot>());
+        }
+    }
+
+
+    private IEnumerator DelayedSetDots(){
+        yield return new WaitForEndOfFrame();
+        SetUsedDots(GetPlacementDots());
+    }
+
+
+#if UNITY_EDITOR
     private bool canPlaceHere_editorOnly = true;
 
-    private void OnEnable() {
-        StartCoroutine(Update20());
-    }
 
     private IEnumerator Update20(){
         WaitForSeconds wait = new WaitForSeconds(1f / 20);
