@@ -279,7 +279,7 @@ public class ShopManager : MonoBehaviour {
         List<Vector3> verts = GetVertices(o);
 
         for(int i=0; i<verts.Count; i++){
-            b.Encapsulate(o.transform.TransformPoint(verts[i]));
+            b.Encapsulate(o.transform.TransformPoint(verts[i]) - o.transform.position);
         }
 
         return b;
