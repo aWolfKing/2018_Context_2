@@ -14,7 +14,8 @@ MonoBehaviour:
   categories:
   - not in store
   data:
-  - prefab: {fileID: 1592693614543412, guid: 0d00283f08ad6f242afe9f0ba768137d, type: 2}
+  - m_id: 0
+    prefab: {fileID: 1592693614543412, guid: 0d00283f08ad6f242afe9f0ba768137d, type: 2}
     name: name
     category: 0
     description: description
@@ -32,7 +33,8 @@ MonoBehaviour:
       winterElectricityPercentage: 0
       springElectricityPercentage: 0
       effectRadius: 100
-  - prefab: {fileID: 1844994875577360, guid: 17f8e69155c4d684bb55045789698390, type: 2}
+  - m_id: 0
+    prefab: {fileID: 1844994875577360, guid: 17f8e69155c4d684bb55045789698390, type: 2}
     name: name
     category: 0
     description: description
@@ -41,6 +43,19 @@ MonoBehaviour:
     breakPercentage: 0
     repairCost: 0
     upgradesToId: 0
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 921
+    prefab: {fileID: 100002, guid: 17ed043b32739dd41ba3883cd1b2c39e, type: 3}
+    name: ole
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
     upgradeCost: 0
     standardEffectRadius: 100
     affectedObjects: []

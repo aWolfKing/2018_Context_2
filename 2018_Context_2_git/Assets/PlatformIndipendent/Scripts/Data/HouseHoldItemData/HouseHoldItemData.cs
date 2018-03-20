@@ -7,7 +7,7 @@ public class HouseHoldItemData {
 
     [System.NonSerialized] AllHouseHoldItemData container = null;
 
-    private int m_id = -1;
+    [SerializeField][HideInInspector] private int m_id = -1;
     public int ID{ get{ return m_id; } }
 
     public GameObject prefab = null;
