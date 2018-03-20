@@ -216,6 +216,11 @@ public class ShopManager : MonoBehaviour {
         float inpWas = Input.GetAxis(axis);
         do {
 
+            if(Input.GetAxis("Cancel") > 0){
+                ShopManager.CancelBuy();
+                break;
+            }
+
             currently_buying.transform.Rotate(Vector3.up * Input.GetAxis(rotateAxis) * rotateSpeed * Time.smoothDeltaTime);
 
             if(stopwatch.ElapsedMilliseconds >= 5){
@@ -255,6 +260,13 @@ public class ShopManager : MonoBehaviour {
         }
         while (currently_buying != null);
     }
+
+    public static void CancelBuy(){
+        if (_this.currentlyPlacing != null) {
+            GameObject.Destroy(_this.currentlyPlacing.gameObject);
+        }
+    }
+
 
 
     private static Vector2 CalculateWidthAndDepth(HouseHoldItemData data){

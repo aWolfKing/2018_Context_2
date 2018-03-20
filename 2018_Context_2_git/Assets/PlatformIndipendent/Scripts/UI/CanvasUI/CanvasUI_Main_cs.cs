@@ -57,6 +57,7 @@ public class CanvasUI_Main_cs : MonoBehaviour {
 
 
     public void OpenShop(){
+        ShopManager.CancelBuy();
         ShopManager.OnOpenShop();
         StartCoroutine(OpenOrCloseShop(-1));
     }
