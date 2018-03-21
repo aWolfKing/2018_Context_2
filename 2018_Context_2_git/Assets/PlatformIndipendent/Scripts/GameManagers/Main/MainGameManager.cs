@@ -33,6 +33,7 @@ public class MainGameManager : MonoBehaviour {
     }
 
     [SerializeField] private float incomePerSeason = 1000;
+    [SerializeField] private float rentCostPerSeason = 300;
 
     [SerializeField] private float m_cash = 0;
     public static float Cash{
@@ -145,6 +146,8 @@ public class MainGameManager : MonoBehaviour {
             }
 
         }
+
+        ret += _this.rentCostPerSeason;
 
         MonoBehaviour.print("This seasons energy cost: " + ret);
 

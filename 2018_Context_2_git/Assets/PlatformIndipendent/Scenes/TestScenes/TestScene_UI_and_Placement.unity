@@ -145,6 +145,8 @@ MonoBehaviour:
   houseHoldItemDataID: 422
   m_canPlaceMaterial: {fileID: 0}
   m_cannotPlaceMaterial: {fileID: 0}
+  canMove: 1
+  canDelete: 1
 --- !u!4 &1246065
 Transform:
   m_ObjectHideFlags: 0
@@ -408,6 +410,8 @@ MonoBehaviour:
   houseHoldItemDataID: 724
   m_canPlaceMaterial: {fileID: 0}
   m_cannotPlaceMaterial: {fileID: 0}
+  canMove: 1
+  canDelete: 1
 --- !u!4 &116658463
 Transform:
   m_ObjectHideFlags: 0
@@ -1114,6 +1118,8 @@ MonoBehaviour:
   houseHoldItemDataID: 889
   m_canPlaceMaterial: {fileID: 0}
   m_cannotPlaceMaterial: {fileID: 0}
+  canMove: 0
+  canDelete: 0
 --- !u!64 &434349125
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1574,6 +1580,16 @@ Prefab:
       propertyPath: eventSystem
       value: 
       objectReference: {fileID: 1109152909}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.interaction_removeButton
+      value: 
+      objectReference: {fileID: 1534813010}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.interaction_moveButton
+      value: 
+      objectReference: {fileID: 1536856802}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1da8cf0f632e02f4191c1806aebef8a6, type: 2}
   m_IsPrefabParent: 0
@@ -2801,7 +2817,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1358252464}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129401583}
+        m_MethodName: OpenInteraction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1358252464
@@ -2962,6 +2989,8 @@ MonoBehaviour:
   m_canPlaceMaterial: {fileID: 2100000, guid: 5342281c32c647248877f36497a8285b, type: 2}
   m_cannotPlaceMaterial: {fileID: 2100000, guid: 5c7fa61681ddf5f42b84f56f06ca7707,
     type: 2}
+  canMove: 1
+  canDelete: 1
 --- !u!4 &1416585289
 Transform:
   m_ObjectHideFlags: 0
@@ -3332,7 +3361,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1534813011}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129401583}
+        m_MethodName: DeleteInteractingObject
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1534813011
@@ -3443,7 +3483,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1536856803}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129401583}
+        m_MethodName: MoveInteracting
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1536856803
@@ -3650,6 +3701,8 @@ MonoBehaviour:
   houseHoldItemDataID: 889
   m_canPlaceMaterial: {fileID: 0}
   m_cannotPlaceMaterial: {fileID: 0}
+  canMove: 0
+  canDelete: 0
 --- !u!64 &1595958585
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -4402,6 +4455,8 @@ MonoBehaviour:
   houseHoldItemDataID: 889
   m_canPlaceMaterial: {fileID: 0}
   m_cannotPlaceMaterial: {fileID: 0}
+  canMove: 0
+  canDelete: 0
 --- !u!64 &2017173504
 MeshCollider:
   m_ObjectHideFlags: 0

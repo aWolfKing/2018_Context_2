@@ -28,6 +28,25 @@ public class HouseHoldItem_monobehaviour : MonoBehaviour {
     [SerializeField] private Material m_canPlaceMaterial = null;
     [SerializeField] private Material m_cannotPlaceMaterial = null;
 
+    [SerializeField] private bool canMove = true;
+    public bool CanMove{
+        get{
+            return canMove;
+        }
+        set{
+            canMove = value;
+        }
+    }
+
+    [SerializeField] private bool canDelete = true;
+    public bool CanDelete{
+        get{
+            return canDelete;
+        }
+        set{
+            canDelete = value;
+        }
+    }
 
 
     private void OnEnable() {

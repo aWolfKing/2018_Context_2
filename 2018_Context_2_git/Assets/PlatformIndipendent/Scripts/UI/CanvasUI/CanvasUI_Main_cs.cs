@@ -35,6 +35,8 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         public Text descriptionText = null;
         public Text usageText = null;
         public Button interaction_upgradeButton = null;
+        public Button interaction_removeButton = null;
+        public Button interaction_moveButton = null;
         public Transform upgradeTransform = null;
         public Text usageWasText = null;
         public Text usageBecomesText = null;
@@ -61,12 +63,16 @@ public class CanvasUI_Main_cs : MonoBehaviour {
                     upgradeCostText.text = "Upgrade cost: " + interacting.HouseHoldItemData.upgradeCost.ToString();
                     upgradeButton.interactable = MainGameManager.Cash >= interacting.HouseHoldItemData.upgradeCost;
                     interaction_upgradeButton.interactable = true;
+                    interaction_moveButton.interactable = interacting.CanMove;
+                    interaction_removeButton.interactable = interacting.CanDelete;
                 }
                 else{
                     usageBecomesText.text = "-";
                     upgradeCostText.text = "-";
                     upgradeButton.interactable = false;
                     interaction_upgradeButton.interactable = false;
+                    interaction_moveButton.interactable = false;
+                    interaction_removeButton.interactable = false;
                 }
             }
             else{
@@ -77,7 +83,9 @@ public class CanvasUI_Main_cs : MonoBehaviour {
                 usageBecomesText.text = "-";
                 upgradeCostText.text = "-";
                 upgradeButton.interactable = false;
-                interaction_upgradeButton.interactable = false;      
+                interaction_upgradeButton.interactable = false;
+                interaction_moveButton.interactable = false;
+                interaction_removeButton.interactable = false;
             }
         }
     }
@@ -175,6 +183,20 @@ public class CanvasUI_Main_cs : MonoBehaviour {
     }
     public static void RequestCloseUpgrade(){
         _this.CloseUpgrade();
+    }
+
+
+    public void DeleteInteractingObject(){
+        if(interactionAndUpgradeOptions.interacting != null){
+            GameObject.Destroy(interactionAndUpgradeOptions.interacting.gameObject);
+            CloseInteraction();
+        }
+    }
+
+    public void MoveInteracting(){
+        if(interactionAndUpgradeOptions.interacting != null && interactionAndUpgradeOptions.interacting.CanMove){
+            MonoBehaviour.print("Implement this");
+        }
     }
 
 

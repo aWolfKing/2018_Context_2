@@ -338,27 +338,47 @@ public class ShopManager : MonoBehaviour {
 
     public void Upgrade(){
         var interacting = CanvasUI_Main_cs.GetInteracting();
+        var h = interacting.HouseHoldItemData;
         if (interacting != null && interacting.HouseHoldItemData.Upgrade != null){
             MainGameManager.Cash -= interacting.HouseHoldItemData.upgradeCost;
 
             Vector3 p = interacting.transform.position;
             Quaternion r = interacting.transform.rotation;
 
+            bool    canMove = interacting.CanMove,
+                    canDelete = interacting.CanDelete;
+
             GameObject.Destroy(interacting.gameObject);
 
-            GameObject obj = GameObject.Instantiate(interacting.HouseHoldItemData.Upgrade.prefab);
-            obj.name = interacting.HouseHoldItemData.Upgrade.name;
+            GameObject obj = GameObject.Instantiate(h.Upgrade.prefab);
+            obj.name = h.Upgrade.name;
             obj.transform.position = p;
             obj.transform.rotation = r;
             var placementObj = obj.AddComponent<PlacementObject>();
-            Vector2 wd = CalculateWidthAndDepth(interacting.HouseHoldItemData.Upgrade);
+            Vector2 wd = CalculateWidthAndDepth(h.Upgrade);
             placementObj.width = wd.x;
             placementObj.depth = wd.y;
             var houseHoldItem = obj.AddComponent<HouseHoldItem_monobehaviour>();
-            houseHoldItem.SetHouseHoldItemDataID(interacting.HouseHoldItemData.Upgrade.ID);
+            houseHoldItem.SetHouseHoldItemDataID(h.Upgrade.ID);
+            houseHoldItem.CanMove = canMove;
+            houseHoldItem.CanDelete = canDelete;
 
             _this.currently_buying = houseHoldItem;
             _this.currentlyPlacing = placementObj;
+
+
+            var transforms = currently_buying.gameObject.GetComponentsInChildren<Transform>();
+            foreach (var t in transforms) {
+                if (t.GetComponent<MeshCollider>() == null) {
+                    var collider = t.gameObject.AddComponent<MeshCollider>();
+                    collider.sharedMesh = t.gameObject.GetComponent<MeshFilter>().sharedMesh;
+                    collider.convex = true;
+                }
+
+            }
+
+            currently_buying = null;
+            currentlyPlacing = null;
 
             CanvasUI_Main_cs.RequestCloseUpgrade();
 
