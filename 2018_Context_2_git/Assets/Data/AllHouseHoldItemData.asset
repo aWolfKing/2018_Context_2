@@ -505,7 +505,7 @@ MonoBehaviour:
     standardEffectRadius: 100
     affectedObjects: []
   - m_id: 889
-    prefab: {fileID: 100000, guid: d78dec00d62e44e29a055f58f3432727, type: 3}
+    prefab: {fileID: 100000, guid: 8b39647452c284d16ac422c14c127ec1, type: 3}
     name: Single Glass Window
     category: 0
     description: "This window is definetely better than those holes you\n had when
@@ -514,12 +514,12 @@ MonoBehaviour:
     electricityUsage: 15
     breakPercentage: 0
     repairCost: 0
-    upgradesToId: -1
+    upgradesToId: 29
     upgradeCost: 0
     standardEffectRadius: 100
     affectedObjects: []
   - m_id: 29
-    prefab: {fileID: 100000, guid: bf826c7910b934888af318e4b03de9d5, type: 3}
+    prefab: {fileID: 100000, guid: 4986ef99efc984cfc89635bbe2102886, type: 3}
     name: Double Glass Window
     category: 0
     description: 'This double-sided glass '
