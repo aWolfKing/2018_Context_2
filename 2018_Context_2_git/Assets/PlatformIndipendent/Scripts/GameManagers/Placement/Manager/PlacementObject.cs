@@ -47,9 +47,9 @@ public class PlacementObject : MonoBehaviour {
     }
 
     private void OnDisable() {
-        if(autoPlace){
+        //if(autoPlace){
             SetUsedDots(new List<PlacementFace.PlacementDot>());
-        }
+        //}
     }
 
 

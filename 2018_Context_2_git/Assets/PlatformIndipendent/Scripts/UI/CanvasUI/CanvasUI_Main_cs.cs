@@ -28,8 +28,65 @@ public class CanvasUI_Main_cs : MonoBehaviour {
     }
 
 
+    [System.Serializable]
+    public class InteractionAndUpgrade{
+        public Transform interactionTransform = null;
+        public Text interactionTitle = null;
+        public Text descriptionText = null;
+        public Text usageText = null;
+        public Button interaction_upgradeButton = null;
+        public Transform upgradeTransform = null;
+        public Text usageWasText = null;
+        public Text usageBecomesText = null;
+        public Text upgradeCostText = null;
+        public HouseHoldItem_monobehaviour interacting = null;
+        public Button upgradeButton = null;
+
+        public AnimationCurve openAndClosCurve = null;
+
+        public void Awake(){
+            interactionTransform.localPosition = new Vector3(openAndClosCurve.Evaluate(1f), 0, 0);
+            upgradeTransform.localPosition = new Vector3(openAndClosCurve.Evaluate(1f), 0, 0);
+        }
+        public void FixedUpdate(){
+            if(interacting != null){
+                interactionTitle.text = interacting.HouseHoldItemData.name;
+                descriptionText.text = interacting.HouseHoldItemData.description;
+                usageText.text = "Usage: " + interacting.HouseHoldItemData.electricityUsage.ToString();
+
+                usageWasText.text = interacting.HouseHoldItemData.electricityUsage.ToString();
+                var u = interacting.HouseHoldItemData.Upgrade;
+                if (u != null){
+                    usageBecomesText.text = u.electricityUsage.ToString();
+                    upgradeCostText.text = "Upgrade cost: " + interacting.HouseHoldItemData.upgradeCost.ToString();
+                    upgradeButton.interactable = MainGameManager.Cash >= interacting.HouseHoldItemData.upgradeCost;
+                    interaction_upgradeButton.interactable = true;
+                }
+                else{
+                    usageBecomesText.text = "-";
+                    upgradeCostText.text = "-";
+                    upgradeButton.interactable = false;
+                    interaction_upgradeButton.interactable = false;
+                }
+            }
+            else{
+                interactionTitle.text = "-";
+                descriptionText.text = "-";
+                usageText.text = "-";
+                usageWasText.text = "-";
+                usageBecomesText.text = "-";
+                upgradeCostText.text = "-";
+                upgradeButton.interactable = false;
+                interaction_upgradeButton.interactable = false;      
+            }
+        }
+    }
+
+
+
     [SerializeField] private ShopOptions shopOptions = new ShopOptions();
     [SerializeField] private InterfaceOptions interfaceOptions = new InterfaceOptions();
+    [SerializeField] private InteractionAndUpgrade interactionAndUpgradeOptions = new InteractionAndUpgrade();
     private static CanvasUI_Main_cs _this = null;
 
 
@@ -48,17 +105,24 @@ public class CanvasUI_Main_cs : MonoBehaviour {
             shopOptions.categoryDropDown.onValueChanged.AddListener(OnCategoryChanged_UICallback);
         }
 
+        interactionAndUpgradeOptions.Awake();
+
     }
 
     private void FixedUpdate() {
         shopOptions.FixedUpdate();
         interfaceOptions.FixedUpdate();
+        interactionAndUpgradeOptions.FixedUpdate();
     }
 
 
     public void OpenShop(){
         ShopManager.CancelBuy();
         ShopManager.OnOpenShop();
+
+        CloseInteraction();
+        CloseUpgrade();
+
         StartCoroutine(OpenOrCloseShop(-1));
     }
     public void CloseShop(){
@@ -66,13 +130,44 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         StartCoroutine(OpenOrCloseShop(1));
     }
 
-
     public static void RequestOpenShop() {
         _this.OpenShop();
     }
 
     public static void RequestCloseShop(){
         _this.CloseShop();
+    }
+
+
+
+    public void OpenInteraction() {
+        CloseUpgrade();
+        StartCoroutine(OpenOrCloseInteractionOrUpgrade(interactionAndUpgradeOptions.interactionTransform, -1));
+    }
+    public void CloseInteraction() {
+        StartCoroutine(OpenOrCloseInteractionOrUpgrade(interactionAndUpgradeOptions.interactionTransform, 1));
+    }
+
+    public void OpenUpgrade() {
+        CloseInteraction();
+        StartCoroutine(OpenOrCloseInteractionOrUpgrade(interactionAndUpgradeOptions.upgradeTransform, -1));
+    }
+    public void CloseUpgrade() {
+        StartCoroutine(OpenOrCloseInteractionOrUpgrade(interactionAndUpgradeOptions.upgradeTransform, 1));
+    }
+
+    public static void RequestOpenInteraction(){
+        _this.OpenInteraction();
+    }
+    public static void RequestCloseInteraction(){
+        _this.CloseInteraction();
+    }
+
+    public static void RequestOpenUpgrade(){
+        _this.OpenUpgrade();
+    }
+    public static void RequestCloseUpgrade(){
+        _this.CloseUpgrade();
     }
 
 
@@ -109,5 +204,51 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         }
         while (i != t);
     }
+
+
+    /// <summary>
+    /// 
+    /// </summary>
+    /// <param name="t"></param>
+    /// <param name="direction">Positive : close, Negative : open</param>
+    /// <returns></returns>
+    private IEnumerator OpenOrCloseInteractionOrUpgrade(Transform transfrm, int direction){
+        float s = (1f / shopOptions.animationDuration);
+        float t = direction * 0.5f + 0.5f;
+        float i = 1 - t;
+        var wait = new WaitForFixedUpdate();
+        if (transfrm.localPosition.x != interactionAndUpgradeOptions.openAndClosCurve.Evaluate(Mathf.Clamp01(t))) {
+
+
+            do {
+                Vector3 p = transfrm.localPosition;
+                p.x = interactionAndUpgradeOptions.openAndClosCurve.Evaluate(Mathf.Clamp01(i));
+                transfrm.localPosition = p;
+                yield return wait;
+                i = Mathf.Clamp01(i + (direction * Time.fixedDeltaTime * s));
+            }
+            while (i != t);
+
+        }
+    }
+
+
+    public static void SetInteracting(HouseHoldItem_monobehaviour m){
+        if (m != _this.interactionAndUpgradeOptions.interacting) {
+            _this.interactionAndUpgradeOptions.interacting = m;
+            if(m != null){
+                _this.OpenInteraction();
+            }
+            else{
+                _this.CloseInteraction();
+                _this.CloseUpgrade();
+            }
+        }
+    }
+
+    public static HouseHoldItem_monobehaviour GetInteracting(){
+        return _this.interactionAndUpgradeOptions.interacting;
+    }
+
 
 }

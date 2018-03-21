@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.5748171, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -509,6 +509,12 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 126949079}
+--- !u!114 &129401583 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 586402463}
+  m_Script: {fileID: 11500000, guid: 3c1038f9039ccd846a12f32fd3ebd669, type: 3}
 --- !u!1 &154801376
 GameObject:
   m_ObjectHideFlags: 0
@@ -971,7 +977,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &430849740
 Prefab:
@@ -1010,7 +1016,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f819f26ee52464be4891c24a1a2688f3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f819f26ee52464be4891c24a1a2688f3, type: 3}
@@ -1033,7 +1039,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &453111114
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1298,6 +1304,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4054779761547644, guid: 1da8cf0f632e02f4191c1806aebef8a6, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -1328,7 +1339,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4054779761547644, guid: 1da8cf0f632e02f4191c1806aebef8a6, type: 2}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 114909949401780796, guid: 1da8cf0f632e02f4191c1806aebef8a6,
         type: 2}
@@ -1349,6 +1360,111 @@ Prefab:
         type: 2}
       propertyPath: m_AnchorMax.y
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.interactionTransform
+      value: 
+      objectReference: {fileID: 453111114}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.interactionTitle
+      value: 
+      objectReference: {fileID: 1595934464}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.descriptionText
+      value: 
+      objectReference: {fileID: 38615322}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.usageText
+      value: 
+      objectReference: {fileID: 453604777}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.upgradeTransform
+      value: 
+      objectReference: {fileID: 63693719}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.usageWasText
+      value: 
+      objectReference: {fileID: 1766796550}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.usageBecomesText
+      value: 
+      objectReference: {fileID: 319661803}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.upgradeButton
+      value: 
+      objectReference: {fileID: 256196058}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.upgradeCostText
+      value: 
+      objectReference: {fileID: 1284391288}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.interaction_upgradeButton
+      value: 
+      objectReference: {fileID: 1659669036}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_Curve.Array.data[1].time
+      value: 0.07400676
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_Curve.Array.data[1].value
+      value: -0.05432643
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_RotationOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_Curve.Array.data[1].inSlope
+      value: 0.025179088
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_Curve.Array.data[1].outSlope
+      value: 0.025179088
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_Curve.Array.data[2].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: interactionAndUpgradeOptions.openAndClosCurve.m_Curve.Array.data[2].value
+      value: 1.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224097828610271968, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -0.269
+      objectReference: {fileID: 0}
+    - target: {fileID: 224097828610271968, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.606
+      objectReference: {fileID: 0}
+    - target: {fileID: 224097828610271968, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.409
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1da8cf0f632e02f4191c1806aebef8a6, type: 2}
@@ -2302,7 +2418,7 @@ GameObject:
   - component: {fileID: 1284391289}
   - component: {fileID: 1284391288}
   m_Layer: 5
-  m_Name: Usage
+  m_Name: Cost
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2358,7 +2474,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Usage
+  m_Text: Upgrade Cost
 --- !u!222 &1284391289
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3280,6 +3396,7 @@ Transform:
   m_Children:
   - {fileID: 1725462910}
   - {fileID: 599835544}
+  - {fileID: 1844661227}
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -3441,7 +3558,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: f819f26ee52464be4891c24a1a2688f3, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: f819f26ee52464be4891c24a1a2688f3, type: 3}
       propertyPath: m_Name
@@ -3489,7 +3606,7 @@ Transform:
   - {fileID: 430849741}
   - {fileID: 1615723722}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1659669034
 GameObject:
@@ -3566,7 +3683,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1659669037}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 129401583}
+        m_MethodName: OpenUpgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1659669037
@@ -3990,6 +4118,46 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   blocksPlacement: 0
   testTransform: {fileID: 0}
+--- !u!1 &1844661226
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1844661227}
+  - component: {fileID: 1844661228}
+  m_Layer: 0
+  m_Name: Interaction
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1844661227
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1844661226}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1556016178}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1844661228
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1844661226}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01eb24b140dcc464cb6d49570819231d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1883113770 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114735890153912872, guid: 1da8cf0f632e02f4191c1806aebef8a6,
@@ -4063,7 +4231,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Title
+  m_Text: Upgrade
 --- !u!222 &1925250164
 CanvasRenderer:
   m_ObjectHideFlags: 0

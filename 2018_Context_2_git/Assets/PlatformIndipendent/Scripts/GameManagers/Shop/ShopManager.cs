@@ -43,6 +43,8 @@ public class ShopManager : MonoBehaviour {
         }
     }
 
+    private float lastScrollValue = 0;
+
 
     private void OnEnable() {
         _this = this;
@@ -61,6 +63,14 @@ public class ShopManager : MonoBehaviour {
         foreach(var preview in previews){
             preview.Rotate(Vector3.up * Time.fixedDeltaTime * 40);
         }
+
+        if (lastScrollValue != shopItemPreset_UI.containerSlider.value) {
+            shopItemPreset_UI.holder_Parent.localPosition = new Vector3(0,
+                shopItemPreset_UI.containerSlider.value * (shopItemPreset_UI.distBetweenItems + shopItemPreset_UI.shopItemHeight) * (shopItemPreset_UI.holder_Parent.childCount - 1)
+            , 0);
+        }
+        lastScrollValue = shopItemPreset_UI.containerSlider.value;
+
     }
 
 
@@ -248,7 +258,19 @@ public class ShopManager : MonoBehaviour {
                         MainGameManager.Cash -= currently_buying.HouseHoldItemData.purchaseCost;
                         currentlyPlacing.SetUsedDots(placementDots);
                         currently_buying.visualMaterial = HouseHoldItem_monobehaviour.VisualMaterial.normalMaterial;
+
+                        var transforms = currently_buying.gameObject.GetComponentsInChildren<Transform>();
+                        foreach(var t in transforms){
+                            if(t.GetComponent<MeshCollider>() == null){
+                                var collider = t.gameObject.AddComponent<MeshCollider>();
+                                collider.sharedMesh = t.gameObject.GetComponent<MeshFilter>().sharedMesh;
+                                collider.convex = true;
+                            }
+
+                        }
+
                         currently_buying = null;
+                        currentlyPlacing = null;
                         break;
                     }
                 }
@@ -310,6 +332,31 @@ public class ShopManager : MonoBehaviour {
             }
         }
         return ret;
+    }
+
+
+
+    public void Upgrade(){
+        var interacting = CanvasUI_Main_cs.GetInteracting();
+        if (interacting != null && interacting.HouseHoldItemData.Upgrade != null){
+            MainGameManager.Cash -= interacting.HouseHoldItemData.upgradeCost;
+
+            GameObject.Destroy(interacting.gameObject);
+
+            GameObject obj = GameObject.Instantiate(interacting.HouseHoldItemData.Upgrade.prefab);
+            obj.name = interacting.HouseHoldItemData.Upgrade.name;
+            obj.transform.position = _this.defaultItemSpawnPosition;
+            var placementObj = obj.AddComponent<PlacementObject>();
+            Vector2 wd = CalculateWidthAndDepth(interacting.HouseHoldItemData.Upgrade);
+            placementObj.width = wd.x;
+            placementObj.depth = wd.y;
+            var houseHoldItem = obj.AddComponent<HouseHoldItem_monobehaviour>();
+            houseHoldItem.SetHouseHoldItemDataID(interacting.HouseHoldItemData.Upgrade.ID);
+
+            _this.currently_buying = houseHoldItem;
+            _this.currentlyPlacing = placementObj;
+
+        }
     }
 
 
