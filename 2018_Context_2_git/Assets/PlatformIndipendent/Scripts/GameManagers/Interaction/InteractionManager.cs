@@ -8,7 +8,7 @@ public class InteractionManager : MonoBehaviour {
 
     private void Update() {
         float mouse0 = Input.GetAxis("Fire1");
-        if(lastMouse0 < 0.5f && mouse0 >= 0.5f){
+        if(lastMouse0 < 0.5f && mouse0 >= 0.5f && !CanvasUI_Main_cs.EventSystem.IsPointerOverGameObject()){
             CheckForInteractableObject();
         }
         lastMouse0 = mouse0;

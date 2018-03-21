@@ -89,6 +89,13 @@ public class CanvasUI_Main_cs : MonoBehaviour {
     [SerializeField] private InteractionAndUpgrade interactionAndUpgradeOptions = new InteractionAndUpgrade();
     private static CanvasUI_Main_cs _this = null;
 
+    [SerializeField] private UnityEngine.EventSystems.EventSystem eventSystem = null;
+    public static UnityEngine.EventSystems.EventSystem EventSystem{
+        get{
+            return _this.eventSystem;
+        }
+    }
+
 
     private void OnEnable() {
 

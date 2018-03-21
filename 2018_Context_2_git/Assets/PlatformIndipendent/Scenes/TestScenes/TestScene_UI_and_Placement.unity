@@ -701,7 +701,18 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 256196059}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 599835545}
+        m_MethodName: Upgrade
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Button+ButtonClickedEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &256196059
@@ -1466,6 +1477,11 @@ Prefab:
       propertyPath: m_AnchoredPosition.y
       value: 0.409
       objectReference: {fileID: 0}
+    - target: {fileID: 114750474239896400, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: eventSystem
+      value: 
+      objectReference: {fileID: 1109152909}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1da8cf0f632e02f4191c1806aebef8a6, type: 2}
   m_IsPrefabParent: 0
@@ -2299,6 +2315,12 @@ MonoBehaviour:
   width: 1.58
   depth: 2.16
   autoPlace: 1
+--- !u!114 &1109152909 stripped
+MonoBehaviour:
+  m_PrefabParentObject: {fileID: 114505575772282352, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+    type: 2}
+  m_PrefabInternal: {fileID: 586402463}
+  m_Script: {fileID: -619905303, guid: f70555f144d8491a825f0804e09c671c, type: 3}
 --- !u!1001 &1145695281
 Prefab:
   m_ObjectHideFlags: 0

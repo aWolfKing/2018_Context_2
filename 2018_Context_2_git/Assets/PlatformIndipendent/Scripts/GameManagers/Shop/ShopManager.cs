@@ -341,11 +341,15 @@ public class ShopManager : MonoBehaviour {
         if (interacting != null && interacting.HouseHoldItemData.Upgrade != null){
             MainGameManager.Cash -= interacting.HouseHoldItemData.upgradeCost;
 
+            Vector3 p = interacting.transform.position;
+            Quaternion r = interacting.transform.rotation;
+
             GameObject.Destroy(interacting.gameObject);
 
             GameObject obj = GameObject.Instantiate(interacting.HouseHoldItemData.Upgrade.prefab);
             obj.name = interacting.HouseHoldItemData.Upgrade.name;
-            obj.transform.position = _this.defaultItemSpawnPosition;
+            obj.transform.position = p;
+            obj.transform.rotation = r;
             var placementObj = obj.AddComponent<PlacementObject>();
             Vector2 wd = CalculateWidthAndDepth(interacting.HouseHoldItemData.Upgrade);
             placementObj.width = wd.x;
@@ -355,6 +359,8 @@ public class ShopManager : MonoBehaviour {
 
             _this.currently_buying = houseHoldItem;
             _this.currentlyPlacing = placementObj;
+
+            CanvasUI_Main_cs.RequestCloseUpgrade();
 
         }
     }
