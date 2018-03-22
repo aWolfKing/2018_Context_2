@@ -60,6 +60,8 @@ public class MainGameManager : MonoBehaviour {
 
     private List<OnNextSeason_monobehaviour> onSeasonChanges = new List<OnNextSeason_monobehaviour>();
 
+    private bool thanksMom = false;
+
 
 
     [RuntimeInitializeOnLoadMethod]
@@ -153,8 +155,6 @@ public class MainGameManager : MonoBehaviour {
 
         }
 
-        ret += _this.rentCostPerSeason;
-
         MonoBehaviour.print("This seasons energy cost: " + ret);
 
         return ret;
@@ -164,11 +164,16 @@ public class MainGameManager : MonoBehaviour {
     public void ContinueToNextSeason(){
         MonoBehaviour.print("To next season");
 
+        StartCoroutine(NextSeasonCoroutine());
+
+        /*
         foreach(var m in onSeasonChanges){
             m.OnBeforeChange();
         }
 
         float costs = CalculateEnergyCosts();
+
+        costs += _this.rentCostPerSeason;
 
         //costs times season multiplier?
 
@@ -202,15 +207,80 @@ public class MainGameManager : MonoBehaviour {
 
         }
 
+        */
+
     }
 
     public static void ToNextSeason(){
         _this.ContinueToNextSeason();
     }
 
+    private IEnumerator NextSeasonCoroutine() {
+        foreach (var m in onSeasonChanges) {
+            m.OnBeforeChange();
+        }
+
+        float costs = CalculateEnergyCosts();
+
+        OnNextSeasonBill.EnergyCost = costs;
+
+        costs += _this.rentCostPerSeason;
+
+        yield return WaitForThanksMom();
+
+        //costs times season multiplier?
+
+        Cash -= costs;
+
+        if (m_cash < 0) { GameOver(); }
+        else {
+
+            seasonsSurvived++;
+
+            switch (currentSeason) {
+                case Season.Fall:
+                    currentSeason = Season.Winter;
+                    break;
+                case Season.Winter:
+                    currentSeason = Season.Spring;
+                    break;
+                case Season.Spring:
+                    currentSeason = Season.Summer;
+                    break;
+                case Season.Summer:
+                    currentSeason = Season.Fall;
+                    break;
+            }
+
+            Cash += incomePerSeason;
+
+            foreach (var m in onSeasonChanges) {
+                m.OnAfterChange();
+            }
+        }
+
+    }
+
 
     public static void GameOver(){
         MonoBehaviour.print("Game over... (implement this)");
     }
+
+
+    private IEnumerator WaitForThanksMom(){
+
+        var wait = new WaitForEndOfFrame();
+        do {
+            yield return wait;
+        }
+        while (!thanksMom);
+        thanksMom = false;
+
+    }
+
+    public void ThanksMom(){
+        thanksMom = true;
+    }
+
 
 }
