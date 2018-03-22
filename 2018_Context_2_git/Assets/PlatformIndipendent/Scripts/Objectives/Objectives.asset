@@ -22,3 +22,22 @@ MonoBehaviour:
     - 964&877
     objectIdsForGold:
     - 964&363
+    feedbackOnBronze: bronze feedback
+    feedbackOnSilver: silver feedback
+    feedbackOnGold: gold feedback
+  - objectiveDescription: Nobody bought you a cactus in response to hearing you are
+      going to live on your own. Maybe you should buy one yourself?
+    seasons: 00000000010000000200000003000000
+    objectIdsForBronze:
+    - 59
+    objectIdsForSilver:
+    - 1
+    objectIdsForGold:
+    - 59&1
+    feedbackOnBronze: Even when you live alone, you still need a friend... A small
+      cactus friend that is!
+    feedbackOnSilver: '"a Small cactus simply isn''t eneugh green" is what you thought
+      when you bought this beautiful big cactus.'
+    feedbackOnGold: You as a cactus-fanatic cannot simply live without at least 2
+      cacti, so youmight have just saved yourself even if it cost you some money you
+      might have wanted to spend on somthing else.

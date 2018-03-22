@@ -14,6 +14,7 @@ public class OnNextSeasonBill : OnNextSeason_monobehaviour {
         }
         set{
             _this.energyCost = value;
+            _this.energyCostTxt.text = value.ToString();
         }
     }
 
@@ -33,7 +34,6 @@ public class OnNextSeasonBill : OnNextSeason_monobehaviour {
     }
 
     public override void OnAfterChange() {
-        MonoBehaviour.print("Show Bill");
         billObj.SetActive(false);
         base.OnAfterChange();
     }

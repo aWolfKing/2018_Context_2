@@ -12,6 +12,9 @@ public class ObjectivesScriptableObject : ScriptableObject {
         public List<string> objectIdsForBronze = new List<string>();
         public List<string> objectIdsForSilver = new List<string>();
         public List<string> objectIdsForGold = new List<string>();
+        public string feedbackOnBronze = "bronze feedback";
+        public string feedbackOnSilver = "silver feedback";
+        public string feedbackOnGold = "gold feedback";
     }
 
     public List<Objective> objectives = new List<Objective>();
