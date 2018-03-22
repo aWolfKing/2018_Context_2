@@ -22,9 +22,14 @@ MonoBehaviour:
     - 964&877
     objectIdsForGold:
     - 964&363
-    feedbackOnBronze: bronze feedback
-    feedbackOnSilver: silver feedback
-    feedbackOnGold: gold feedback
+    feedbackOnBronze: You literally bought the bare minimum to stay alive... Well,
+      you did stay alive, so I suppose you did complete this objective...
+    feedbackOnSilver: Shitty toilet and a decent bed or rather just a matress and
+      a toilet you don't have to be afraid of? a Question you did know how to answer!
+      Whichever your priority, we learned where you propably spend the most time.
+    feedbackOnGold: 'In order to prevent having nightmares about your toilet you need
+      two things: a not so scary toilet and a comftable bed. You will not be having
+      nightmares about toilets anymore!'
   - objectiveDescription: Nobody bought you a cactus in response to hearing you are
       going to live on your own. Maybe you should buy one yourself?
     seasons: 00000000010000000200000003000000
