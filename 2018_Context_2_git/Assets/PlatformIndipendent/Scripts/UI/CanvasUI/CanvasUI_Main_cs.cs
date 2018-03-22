@@ -57,22 +57,22 @@ public class CanvasUI_Main_cs : MonoBehaviour {
                 usageText.text = "Usage: " + interacting.HouseHoldItemData.electricityUsage.ToString();
 
                 usageWasText.text = interacting.HouseHoldItemData.electricityUsage.ToString();
+
+                interaction_moveButton.interactable = interacting.CanMove;
+                interaction_removeButton.interactable = interacting.CanDelete;
+
                 var u = interacting.HouseHoldItemData.Upgrade;
                 if (u != null){
                     usageBecomesText.text = u.electricityUsage.ToString();
                     upgradeCostText.text = "Upgrade cost: " + interacting.HouseHoldItemData.upgradeCost.ToString();
                     upgradeButton.interactable = MainGameManager.Cash >= interacting.HouseHoldItemData.upgradeCost;
                     interaction_upgradeButton.interactable = true;
-                    interaction_moveButton.interactable = interacting.CanMove;
-                    interaction_removeButton.interactable = interacting.CanDelete;
                 }
                 else{
                     usageBecomesText.text = "-";
                     upgradeCostText.text = "-";
                     upgradeButton.interactable = false;
                     interaction_upgradeButton.interactable = false;
-                    interaction_moveButton.interactable = false;
-                    interaction_removeButton.interactable = false;
                 }
             }
             else{
@@ -188,16 +188,20 @@ public class CanvasUI_Main_cs : MonoBehaviour {
 
     public void DeleteInteractingObject(){
         if(interactionAndUpgradeOptions.interacting != null){
-            GameObject.Destroy(interactionAndUpgradeOptions.interacting.gameObject);
+            //GameObject.Destroy(interactionAndUpgradeOptions.interacting.gameObject);
             CloseInteraction();
+
+            var a = interactionAndUpgradeOptions.interacting.gameObject;
+            AreYouSure.RequestConfirm(() => { GameObject.Destroy(a); }, OpenInteraction);
         }
     }
 
     public void MoveInteracting(){
         if(interactionAndUpgradeOptions.interacting != null && interactionAndUpgradeOptions.interacting.CanMove){
-            MonoBehaviour.print("Implement this");
+            ShopManager.Move(interactionAndUpgradeOptions.interacting, interactionAndUpgradeOptions.interacting.GetComponent<PlacementObject>());
         }
     }
+
 
 
 

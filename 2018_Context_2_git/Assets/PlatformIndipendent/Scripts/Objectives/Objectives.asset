@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ebe2a026883bd4abd13e7502461cf8, type: 3}
+  m_Name: Objectives
+  m_EditorClassIdentifier: 
+  objectives:
+  - objectiveDescription: Make sure you can stay alive... Buy somthing to sleep on
+      and buy a toilet.
+    seasons: 00000000010000000200000003000000
+    objectIdsForBronze:
+    - 877&902
+    objectIdsForSilver:
+    - 902&363
+    - 964&877
+    objectIdsForGold:
+    - 964&363

@@ -191,13 +191,16 @@ Assets/PlatformIndipendent/Scripts/Data/ScriptableObject/AllHouseHoldItemData.cs
 Assets/PlatformIndipendent/Scripts/GameManagers/Interaction/InteractionManager.cs
 Assets/PlatformIndipendent/Scripts/GameManagers/Main/MainGameManager.cs
 Assets/PlatformIndipendent/Scripts/GameManagers/Main/OnNextSeason/Base/OnNextSeason_monobehaviour.cs
+Assets/PlatformIndipendent/Scripts/GameManagers/Main/OnNextSeason/Implementations/OnNextSeasonTimeLapse.cs
 Assets/PlatformIndipendent/Scripts/GameManagers/Placement/Manager/PlacementFace.cs
 Assets/PlatformIndipendent/Scripts/GameManagers/Placement/Manager/PlacementManager.cs
 Assets/PlatformIndipendent/Scripts/GameManagers/Placement/Manager/PlacementObject.cs
 Assets/PlatformIndipendent/Scripts/GameManagers/Shop/ShopManager.cs
 Assets/PlatformIndipendent/Scripts/HouseHoldItems/GenericHouseHolditem/HouseHoldItem_monobehaviour.cs
 Assets/PlatformIndipendent/Scripts/Input/CameraControl.cs
+Assets/PlatformIndipendent/Scripts/UI/CanvasUI/AreYouSure.cs
 Assets/PlatformIndipendent/Scripts/UI/CanvasUI/CanvasUI_Main_cs.cs
+Assets/PlatformIndipendent/Scripts/UI/CanvasUI/OptionsMenu.cs
 Assets/PlatformIndipendent/Scripts/UI/InEditor/UIEditorWindow.cs
 Assets/PlatformIndipendent/Scripts/UI/InEditor/UITool.cs
 Assets/PlatformIndipendent/Scripts/UI/Manager/ProceduralUIComponent.cs

@@ -70,7 +70,7 @@ public class PlacementManager : MonoBehaviour {
     }
     public static bool CanPlace(List<PlacementFace.PlacementDot> d){
         foreach(var _d in d){ 
-            if(_d.used){
+            if(_d.used) {
                 return false;
             }
         }

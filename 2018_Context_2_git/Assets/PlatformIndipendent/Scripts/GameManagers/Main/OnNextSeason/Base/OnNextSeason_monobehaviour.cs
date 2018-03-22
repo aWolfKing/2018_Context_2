@@ -5,7 +5,8 @@ using UnityEngine;
 public class OnNextSeason_monobehaviour : MonoBehaviour {
 
     private void OnEnable() {
-        MainGameManager.AddOnSeasonChange(this);
+        //MainGameManager.AddOnSeasonChange(this);
+        StartCoroutine(DelayedAdd());
     }
 
     private void OnDisable() {
@@ -15,5 +16,10 @@ public class OnNextSeason_monobehaviour : MonoBehaviour {
     public virtual void OnBeforeChange(){ }
 
     public virtual void OnAfterChange(){ }
+
+    private IEnumerator DelayedAdd(){
+        yield return new WaitForEndOfFrame();
+        MainGameManager.AddOnSeasonChange(this);
+    }
 
 }

@@ -9,6 +9,12 @@ public enum Season{
 public class MainGameManager : MonoBehaviour {
 
     private static List<HouseHoldItem_monobehaviour> allObjects = new List<HouseHoldItem_monobehaviour>();
+    public static List<HouseHoldItem_monobehaviour> AllObjects{
+        get{
+            return allObjects;
+        }
+    }
+
     private static MainGameManager _this = null;
     [SerializeField] private AllHouseHoldItemData allHouseHoldItemData = null;
     public static AllHouseHoldItemData Data{

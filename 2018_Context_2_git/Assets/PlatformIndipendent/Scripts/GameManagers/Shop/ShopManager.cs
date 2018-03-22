@@ -228,6 +228,7 @@ public class ShopManager : MonoBehaviour {
 
             if(Input.GetAxis("Cancel") > 0){
                 ShopManager.CancelBuy();
+                OptionsMenu.PreventOpening();
                 break;
             }
 
@@ -252,7 +253,7 @@ public class ShopManager : MonoBehaviour {
                 currently_buying.visualMaterial = canPlace ? HouseHoldItem_monobehaviour.VisualMaterial.canPlace : HouseHoldItem_monobehaviour.VisualMaterial.cannotPlace;
 
 
-                if(inpWas >= 0.5f && Input.GetAxis(axis) < 0.5f){
+                if(inpWas >= 0.5f && Input.GetAxis(axis) < 0.5f && !CanvasUI_Main_cs.EventSystem.IsPointerOverGameObject()) {
 
                     if(canPlace){
                         MainGameManager.Cash -= currently_buying.HouseHoldItemData.purchaseCost;
@@ -287,6 +288,76 @@ public class ShopManager : MonoBehaviour {
         if (_this.currentlyPlacing != null) {
             GameObject.Destroy(_this.currentlyPlacing.gameObject);
         }
+    }
+
+
+    public static void Move(HouseHoldItem_monobehaviour m, PlacementObject o){
+        CanvasUI_Main_cs.RequestCloseInteraction();
+        _this.StartCoroutine(_this.MoveCoroutine(m, o));
+    }
+
+    private IEnumerator MoveCoroutine(HouseHoldItem_monobehaviour m, PlacementObject o){
+        var wait = new WaitForEndOfFrame();
+        System.Diagnostics.Stopwatch stopwatch = new System.Diagnostics.Stopwatch();
+        stopwatch.Start();
+
+        Vector3 startPos = m.transform.position;
+        Quaternion startRot = m.transform.rotation;
+
+        string axis = "Fire1";
+        string rotateAxis = "Horizontal";
+        float rotateSpeed = 90f;
+
+        float placementHelpOffset = -100;
+        placementHelp.transform.position = CameraControl.RootPosition + new Vector3(0, placementHelpOffset, 0);
+
+        float inpWas = Input.GetAxis(axis);
+        do {
+
+            if (Input.GetAxis("Cancel") > 0) {
+                m.transform.position = startPos;
+                m.transform.rotation = startRot;
+                m.visualMaterial = HouseHoldItem_monobehaviour.VisualMaterial.normalMaterial;
+                OptionsMenu.PreventOpening();
+                break;
+            }
+
+            m.transform.Rotate(Vector3.up * Input.GetAxis(rotateAxis) * rotateSpeed * Time.smoothDeltaTime);
+
+            if (stopwatch.ElapsedMilliseconds >= 5) {
+
+                var cameraRay = CameraControl.Camera.ScreenPointToRay(Input.mousePosition);
+                RaycastHit hit;
+                Vector3 placementPos = m.transform.position;
+                if (placementHelp.Raycast(new Ray(cameraRay.origin + new Vector3(0, placementHelpOffset, 0), cameraRay.direction), out hit, Mathf.Abs(1000 * placementHelpOffset))) {
+                    placementPos = hit.point + new Vector3(0, -placementHelpOffset, 0);
+                }
+
+                var placementDots = PlacementManager.GetPlacementDots(placementPos, m.transform.rotation, o.width, o.depth);
+
+                if (placementDots.Count > 0) {
+                    m.transform.position = placementPos;
+                }
+
+                var canPlace = PlacementManager.CanPlace(placementDots);
+                m.visualMaterial = canPlace ? HouseHoldItem_monobehaviour.VisualMaterial.canPlace : HouseHoldItem_monobehaviour.VisualMaterial.cannotPlace;
+
+
+                if (inpWas >= 0.5f && Input.GetAxis(axis) < 0.5f && !CanvasUI_Main_cs.EventSystem.IsPointerOverGameObject()) {
+
+                    if (canPlace) {
+                        o.SetUsedDots(placementDots);
+                        m.visualMaterial = HouseHoldItem_monobehaviour.VisualMaterial.normalMaterial;
+                        break;
+                    }
+                }
+                stopwatch.Reset();
+                stopwatch.Start();
+            }
+            inpWas = Input.GetAxis(axis);
+            yield return wait;
+        }
+        while (m != null && o != null);
     }
 
 
