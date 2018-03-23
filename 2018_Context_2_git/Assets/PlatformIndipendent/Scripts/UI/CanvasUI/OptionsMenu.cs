@@ -39,6 +39,11 @@ public class OptionsMenu : MonoBehaviour {
         _this.doBlock = true;
     }
 
+    public static void RequestOpen(){
+        _this.doBlock = false;
+        _this.doOpen = true;
+    }
+
 
     public void Open(){
         optionsMenuObj.SetActive(true);

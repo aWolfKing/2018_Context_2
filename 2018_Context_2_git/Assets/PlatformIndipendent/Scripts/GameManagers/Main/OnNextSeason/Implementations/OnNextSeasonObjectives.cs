@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
 
+
+    [SerializeField] private TMPro.TextMeshProUGUI  objective0 = null,
+                                                    objective1 = null;
+
+
     [SerializeField] private ObjectivesScriptableObject objectivesScriptableObject = null;
 
     private List<ObjectivesScriptableObject.Objective> completed = new List<ObjectivesScriptableObject.Objective>();
@@ -173,6 +178,30 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
         completed.Add(o);
 
         MonoBehaviour.print(@"Player achieved """ + o.objectiveDescription + @""" with a " + r.ToString() + " rank!");
+
+        {
+            string t = "";
+            switch(r){
+                case rank.bronze:
+                    t = o.feedbackOnBronze;
+                    break;
+                case rank.silver:
+                    t = o.feedbackOnSilver;
+                    break;
+                case rank.gold:
+                    t = o.feedbackOnGold;
+                    break;
+            }
+
+            if (objectivesScriptableObject.objectives.IndexOf(o) == 0) {
+                objective0.text = t;
+            }
+            else if (objectivesScriptableObject.objectives.IndexOf(o) == 1) {
+                objective1.text = t;
+            }
+        }
+
+        OptionsMenu.RequestOpen();
 
     }
 
