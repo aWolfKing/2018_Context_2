@@ -113,7 +113,9 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         {
             List<Dropdown.OptionData> categories = new List<Dropdown.OptionData>();
             for (int i = 0; i < MainGameManager.Data.categories.Count; i++){
-                categories.Add(new Dropdown.OptionData(MainGameManager.Data.categories[i]));
+                if (MainGameManager.Data.categories[i] != "not in store") {
+                    categories.Add(new Dropdown.OptionData(MainGameManager.Data.categories[i]));
+                }
             }
             shopOptions.categoryDropDown.options = categories;
 
