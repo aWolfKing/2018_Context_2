@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: f8dd1480ba3344ff18c25867d2f6feaa
+timeCreated: 1521804965
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Gnorts, Mr A!
+  fontNames:
+  - Gnorts, Mr A!
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
