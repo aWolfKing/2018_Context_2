@@ -21,7 +21,9 @@ public class OnNextSeasonBill : OnNextSeason_monobehaviour {
 
     [SerializeField] private GameObject billObj = null;
     //[SerializeField] private Text energyCostTxt = null;
-    [SerializeField] private TextMeshProUGUI energyCostTxt = null;
+    [SerializeField] private TextMeshProUGUI    energyCostTxt = null,
+                                                rentCost = null,
+                                                income = null;
 
     [SerializeField] private TextMeshProUGUI cashAmount = null;
 
@@ -39,6 +41,9 @@ public class OnNextSeasonBill : OnNextSeason_monobehaviour {
 
     public override void OnBeforeChange() {
         energyCostTxt.text = "-" + energyCost.ToString();
+        rentCost.text = "-" + MainGameManager.RentCostPerSeason;
+        income.text = MainGameManager.IncomePerSeason.ToString();
+
         cashAmount.text = MainGameManager.Cash.ToString();
         if(MainGameManager.Cash < 0){
             negativeCashObj.SetActive(true);

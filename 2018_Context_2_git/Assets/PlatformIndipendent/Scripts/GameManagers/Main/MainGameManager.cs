@@ -39,7 +39,13 @@ public class MainGameManager : MonoBehaviour {
     }
 
     [SerializeField] private float incomePerSeason = 1000;
+    public static float IncomePerSeason{
+        get{ return _this.incomePerSeason; }
+    }
     [SerializeField] private float rentCostPerSeason = 300;
+    public static float RentCostPerSeason{
+        get{ return _this.rentCostPerSeason; }
+    }
 
     [SerializeField] private float m_cash = 0;
     public static float Cash{
