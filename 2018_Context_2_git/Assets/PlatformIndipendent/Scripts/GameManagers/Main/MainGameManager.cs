@@ -48,6 +48,7 @@ public class MainGameManager : MonoBehaviour {
         }
         set{
             _this.m_cash = value;
+            onCashChanged();
         }
     }
 
@@ -61,6 +62,8 @@ public class MainGameManager : MonoBehaviour {
     private List<OnNextSeason_monobehaviour> onSeasonChanges = new List<OnNextSeason_monobehaviour>();
 
     private bool thanksMom = false;
+
+    public static System.Action onCashChanged = null;
 
 
 
@@ -226,11 +229,15 @@ public class MainGameManager : MonoBehaviour {
 
         costs += _this.rentCostPerSeason;
 
+        Cash -= costs;
+
+        Cash += incomePerSeason;
+
         yield return WaitForThanksMom();
 
         //costs times season multiplier?
 
-        Cash -= costs;
+        //Cash -= costs;
 
         if (m_cash < 0) { GameOver(); }
         else {
@@ -252,7 +259,7 @@ public class MainGameManager : MonoBehaviour {
                     break;
             }
 
-            Cash += incomePerSeason;
+            //Cash += incomePerSeason;
 
             foreach (var m in onSeasonChanges) {
                 m.OnAfterChange();
