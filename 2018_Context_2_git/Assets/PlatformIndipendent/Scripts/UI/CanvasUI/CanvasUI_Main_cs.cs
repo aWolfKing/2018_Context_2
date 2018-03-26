@@ -40,7 +40,7 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         public Transform upgradeTransform = null;
         public Text usageWasText = null;
         public Text usageBecomesText = null;
-        public Text upgradeCostText = null;
+        public TMPro.TextMeshProUGUI upgradeCostText = null;
         public HouseHoldItem_monobehaviour interacting = null;
         public Button upgradeButton = null;
 

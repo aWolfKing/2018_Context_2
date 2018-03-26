@@ -1,0 +1,48 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97ebe2a026883bd4abd13e7502461cf8, type: 3}
+  m_Name: Objectives_backup
+  m_EditorClassIdentifier: 
+  objectives:
+  - objectiveDescription: Make sure you can stay alive... Buy somthing to sleep on
+      and buy a toilet.
+    seasons: 00000000010000000200000003000000
+    objectIdsForBronze:
+    - 877&902
+    objectIdsForSilver:
+    - 964&877
+    - 902&363
+    objectIdsForGold:
+    - 964&363
+    feedbackOnBronze: You literally bought the bare minimum to stay alive... Well,
+      you did stay alive, so I suppose you did complete this objective...
+    feedbackOnSilver: Shitty toilet and a decent bed or rather just a matress and
+      a toilet you don't have to be afraid of? a Question you did know how to answer!
+      Whichever your priority, we learned where you propably spend the most time.
+    feedbackOnGold: 'In order to prevent having nightmares about your toilet you need
+      two things: a not so scary toilet and a comftable bed. You will not be having
+      nightmares about toilets anymore!'
+  - objectiveDescription: Nobody bought you a cactus in response to hearing you are
+      going to live on your own. Maybe you should buy one yourself?
+    seasons: 00000000010000000200000003000000
+    objectIdsForBronze:
+    - 59
+    objectIdsForSilver:
+    - 1
+    objectIdsForGold:
+    - 59&1
+    feedbackOnBronze: Even when you live alone, you still need a friend... A small
+      cactus friend that is!
+    feedbackOnSilver: '"a Small cactus simply isn''t eneugh green" is what you thought
+      when you bought this beautiful big cactus.'
+    feedbackOnGold: You as a cactus-fanatic cannot simply live without at least 2
+      cacti, so you might have just saved yourself even if it cost you some money
+      you might have wanted to spend on somthing else.

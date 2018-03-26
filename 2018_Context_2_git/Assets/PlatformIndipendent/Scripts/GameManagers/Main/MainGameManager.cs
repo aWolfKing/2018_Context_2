@@ -284,7 +284,7 @@ public class MainGameManager : MonoBehaviour {
 
 
     public static void GameOver(){
-        MonoBehaviour.print("Game over... (implement this)");
+        //MonoBehaviour.print("Game over... (implement this)");
         _this.onGameOver.Invoke();
     }
 

@@ -8,6 +8,14 @@ public class FakeLoadingScreen : MonoBehaviour {
     [SerializeField] private float loadingTime = 4f;
     [SerializeField] private string sceneName = "";
 
+    [SerializeField] private bool autoStart = false;
+
+    private void Start() {
+        if(autoStart){
+            StartFakeLoading();
+        }
+    }
+
     public void StartFakeLoading(){
         StartCoroutine(Wait());
     }

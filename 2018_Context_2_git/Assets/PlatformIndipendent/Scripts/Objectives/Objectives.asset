@@ -46,3 +46,46 @@ MonoBehaviour:
     feedbackOnGold: You as a cactus-fanatic cannot simply live without at least 2
       cacti, so you might have just saved yourself even if it cost you some money
       you might have wanted to spend on somthing else.
+  - objectiveDescription: Winter is coming... Make your house winter ready. (fix your
+      windows)
+    seasons: 00000000010000000200000003000000
+    objectIdsForBronze: []
+    objectIdsForSilver:
+    - 29
+    objectIdsForGold: []
+    feedbackOnBronze: 
+    feedbackOnSilver: Because tech-support would not help you, you decided to fix
+      your windows yourself and you are getting better at it!
+    feedbackOnGold: 
+  - objectiveDescription: You have eaten more chinese takeaway than you can handle,
+      maybe it is time to buy a fridge.
+    seasons: 00000000010000000200000003000000
+    objectIdsForBronze:
+    - 528
+    objectIdsForSilver:
+    - 683
+    - 728
+    objectIdsForGold:
+    - 205
+    feedbackOnBronze: You decided that you fridge should function more like a cabin
+      than a actual fridge. Spoiled food is still food in a way I guess...
+    feedbackOnSilver: You wanted a place to store a lot of food, even if you could
+      save energy by buying a smaller fridge.
+    feedbackOnGold: Your food never survives longer than a day or two, so why would
+      you need a big and energy-feasting fridge?
+  - objectiveDescription: '"Should I buy a washingmachine or buy new clothing?", somthing
+      you seriously considered for a couple of seconds.'
+    seasons: 00000000010000000200000003000000
+    objectIdsForBronze:
+    - 649
+    objectIdsForSilver:
+    - 583
+    objectIdsForGold:
+    - 583&369
+    feedbackOnBronze: That thing the seller called a washing machine does seem to
+      help reduce the amount of dirty clothes on the floor. However, we still are
+      not certain wether all clothes actually return...
+    feedbackOnSilver: The washing mashine seems to do a great job! Sush a great job
+      that you almost forgot that you should also clean yourself every now and then...
+    feedbackOnGold: a Washing machine didn't seem eneugh, so you bought a nice shower.
+      "Best decision ever!"

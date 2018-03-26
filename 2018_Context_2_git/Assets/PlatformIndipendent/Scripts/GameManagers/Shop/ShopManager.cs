@@ -140,10 +140,14 @@ public class ShopManager : MonoBehaviour {
                 else if(child.name == _this.shopItemPreset_UI.previewTransform.name){
                     previewHolder = child;
                 }
+                else if(child.name == "Item_usage (Text)"){
+                    child.GetComponent<Text>().text = "Usage: " + itemsInThisCategory[i].electricityUsage;
+                }
             }
 
             if (itemsInThisCategory[i].prefab != null) {
-                GameObject preview = GameObject.Instantiate(itemsInThisCategory[i].prefab, previewHolder);
+                GameObject preview = new GameObject();
+                //GameObject.Instantiate(itemsInThisCategory[i].prefab, previewHolder);
                 preview.transform.localPosition = Vector3.zero;
 
 
@@ -159,9 +163,11 @@ public class ShopManager : MonoBehaviour {
 
                 Bounds b = _this.GetBounds(preview);
 
-                float scale = _this.shopItemPreset_UI.maxPreviewUnscaledSize/(Mathf.Max(b.extents.x, b.extents.y, b.extents.z)*2)*_this.shopItemPreset_UI.previewScale;
+                float scale = _this.shopItemPreset_UI.previewScale / (Mathf.Max(b.extents.x, b.extents.y, b.extents.z) * 2);
+                //_this.shopItemPreset_UI.maxPreviewUnscaledSize/(Mathf.Max(b.extents.x, b.extents.y, b.extents.z)*2)*_this.shopItemPreset_UI.previewScale;
 
-                preview.transform.localScale = new Vector3(scale, scale, scale);
+                //preview.transform.localScale = new Vector3(scale, scale, scale);
+                preview.transform.localScale = Vector3.one;
 
                 //preview.layer = 5;
 
@@ -269,6 +275,8 @@ public class ShopManager : MonoBehaviour {
                             }
 
                         }
+
+                        AudioEffectManager.Play(AudioEffectManager.Instance.objectPlaced);
 
                         currently_buying = null;
                         currentlyPlacing = null;

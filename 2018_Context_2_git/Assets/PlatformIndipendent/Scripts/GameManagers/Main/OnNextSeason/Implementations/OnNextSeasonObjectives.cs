@@ -22,6 +22,22 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
                                                     goldCompletedText = null;
 
 
+    [SerializeField] private GameObject recentClearedObjectiveObj = null;
+    [SerializeField] private TMPro.TextMeshProUGUI  mission0Descr = null,
+                                                    mission1Descr = null,
+                                                    mission2Descr = null,
+                                                    mission3Descr = null,
+                                                    mission4Descr = null;
+    [SerializeField] private TMPro.TextMeshProUGUI  clearedObjectiveTxt = null,
+                                                    clearedObjectiveFeedback = null;
+    private List<ObjectivesScriptableObject.Objective> recentCleared = new List<ObjectivesScriptableObject.Objective>();
+    private List<rank> recentClearedRanks = new List<rank>();
+    private static OnNextSeasonObjectives _this = null;
+
+    private void Start() {
+        _this = this;
+    }
+
 
     public override void OnBeforeChange() {
         base.OnBeforeChange();
@@ -189,6 +205,9 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
 
         MonoBehaviour.print(@"Player achieved """ + o.objectiveDescription + @""" with a " + r.ToString() + " rank!");
 
+        recentCleared.Add(o);
+        recentClearedRanks.Add(r);
+
         {
             string t = "";
             switch(r){
@@ -225,6 +244,81 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
 
     private enum rank{
         bronze, silver, gold
+    }
+
+
+    public static void UpdateUI(){
+        if(_this.recentCleared.Count > 0){
+            _this.recentClearedObjectiveObj.SetActive(true);
+
+            string t = "";
+
+            int index = _this.objectivesScriptableObject.objectives.IndexOf(_this.recentCleared[0]);
+
+            switch(index){
+                case 0:
+                    t = _this.mission0Descr.text;
+                    break;
+                case 1:
+                    t = _this.mission1Descr.text;
+                    break;
+                case 2:
+                    t = _this.mission2Descr.text;
+                    break;
+                case 3:
+                    t = _this.mission3Descr.text;
+                    break;
+                case 4:
+                    t = _this.mission4Descr.text;
+                    break;
+            }
+
+            _this.clearedObjectiveTxt.text = t;
+
+            string f = "";
+            switch(_this.recentClearedRanks[0]){
+                case rank.bronze:
+                    f = _this.recentCleared[0].feedbackOnBronze;
+                    break;
+                case rank.silver:
+                    f = _this.recentCleared[0].feedbackOnSilver;
+                    break;
+                case rank.gold:
+                    f = _this.recentCleared[0].feedbackOnGold;
+                    break;
+            }
+
+            _this.clearedObjectiveFeedback.text = f;
+
+        }
+        else{
+            _this.recentClearedObjectiveObj.SetActive(false);
+        }
+
+        if(_this.completed.Contains(_this.objectivesScriptableObject.objectives[0])){
+            _this.mission0Descr.text = "completed";
+        }
+        if (_this.completed.Contains(_this.objectivesScriptableObject.objectives[1])) {
+            _this.mission1Descr.text = "completed";
+        }
+        if (_this.completed.Contains(_this.objectivesScriptableObject.objectives[2])) {
+            _this.mission2Descr.text = "completed";
+        }
+        if (_this.completed.Contains(_this.objectivesScriptableObject.objectives[3])) {
+            _this.mission3Descr.text = "completed";
+        }
+        if (_this.completed.Contains(_this.objectivesScriptableObject.objectives[4])) {
+            _this.mission4Descr.text = "completed";
+        }
+
+    }
+
+    public void NextClearedObjective(){
+        if(recentCleared.Count > 0){
+            recentCleared.RemoveAt(0);
+            recentClearedRanks.RemoveAt(0);
+        }
+        UpdateUI();
     }
 
 }

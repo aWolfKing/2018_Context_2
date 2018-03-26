@@ -46,6 +46,7 @@ public class OptionsMenu : MonoBehaviour {
 
 
     public void Open(){
+        OnNextSeasonObjectives.UpdateUI();
         optionsMenuObj.SetActive(true);
     }
 
