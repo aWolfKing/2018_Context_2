@@ -669,7 +669,7 @@ MonoBehaviour:
   - m_id: 369
     prefab: {fileID: 100000, guid: 450f5ca993c0c4deba41a74d4bc80d58, type: 3}
     name: Nice Shower
-    category: 11
+    category: 2
     description: This shower is brand new and works perfects
     purchaseCost: 60
     electricityUsage: 5
@@ -682,10 +682,10 @@ MonoBehaviour:
   - m_id: 593
     prefab: {fileID: 100000, guid: dcb94151cc4324e75b8789987c79b7d7, type: 3}
     name: Old shower
-    category: 13
+    category: 4
     description: This old shower uses a lot of water.
-    purchaseCost: 0
-    electricityUsage: 0
+    purchaseCost: 30
+    electricityUsage: 40
     breakPercentage: 0
     repairCost: 0
     upgradesToId: -1
@@ -695,7 +695,7 @@ MonoBehaviour:
   - m_id: 88
     prefab: {fileID: 100000, guid: 26aba6b672b9142d3afae74625a90d6e, type: 3}
     name: School books
-    category: 13
+    category: 4
     description: Some old school books from students last year. Recycle is the way
       to go! (paper isn't though.. all those trees cut off..)
     purchaseCost: 30
@@ -709,7 +709,7 @@ MonoBehaviour:
   - m_id: 317
     prefab: {fileID: 100000, guid: 8f60fff7845f845f0ba62fc62eada3a2, type: 3}
     name: Small Dragon Cactus
-    category: 12
+    category: 3
     description: This little cactus looks very cute but can hurt you if he wants..
     purchaseCost: 10
     electricityUsage: 0
@@ -800,7 +800,7 @@ MonoBehaviour:
   - m_id: 744
     prefab: {fileID: 100000, guid: c4dee18ceed87416e9c8fb56dd42bd88, type: 3}
     name: Rubber Plant
-    category: 12
+    category: 3
     description: Nice plant that doesn't need much watering, just some love..
     purchaseCost: 10
     electricityUsage: 0
@@ -826,8 +826,8 @@ MonoBehaviour:
   - m_id: 799
     prefab: {fileID: 100000, guid: be48da47a1c234fc5830e29c5dc228de, type: 3}
     name: Bookcase
-    category: 11
-    description: Nice wooden cbookcase with books you'll never read..
+    category: 2
+    description: Nice wooden bookcase with books you'll never read..
     purchaseCost: 45
     electricityUsage: 0
     breakPercentage: 0
@@ -839,7 +839,7 @@ MonoBehaviour:
   - m_id: 86
     prefab: {fileID: 100000, guid: f5469fea63e1e40c78895d9ef8ff2c99, type: 3}
     name: Cactus family
-    category: 12
+    category: 3
     description: "Nice cactus family that doesn't need much watering. Only love. maybe
       not physical love though.. \nMaybe verbally?"
     purchaseCost: 10
