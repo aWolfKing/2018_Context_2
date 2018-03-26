@@ -109,10 +109,21 @@ public class CanvasUI_Main_cs : MonoBehaviour {
 
         _this = this;
 
+        StartCoroutine(DelayedOnEnable());
+
+    }
+
+    private IEnumerator DelayedOnEnable(){
+
+        yield return new WaitForEndOfFrame();
+
         /*Set category dropdown*/
         {
             List<Dropdown.OptionData> categories = new List<Dropdown.OptionData>();
-            for (int i = 0; i < MainGameManager.Data.categories.Count; i++){
+
+            MainGameManager.Data.AlertAll();
+
+            for (int i = 0; i < MainGameManager.Data.categories.Count; i++) {
                 if (MainGameManager.Data.categories[i] != "not in store") {
                     categories.Add(new Dropdown.OptionData(MainGameManager.Data.categories[i]));
                 }
@@ -123,8 +134,9 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         }
 
         interactionAndUpgradeOptions.Awake();
-
     }
+
+
 
     private void FixedUpdate() {
         shopOptions.FixedUpdate();

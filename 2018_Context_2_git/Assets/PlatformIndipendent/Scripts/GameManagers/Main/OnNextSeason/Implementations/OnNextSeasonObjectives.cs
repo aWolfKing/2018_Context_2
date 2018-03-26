@@ -163,11 +163,11 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
     private bool LogicAnd_True(params ILogic[] logic){
         if(logic.Length == 0){ return false; }
         for(int i=0; i<logic.Length; i++){
-            if(!logic[i].Value){
-                return false;
+            if(logic[i].Value){
+                return true;
             }
         }
-        return true;
+        return false;
     }
 
 

@@ -18,8 +18,8 @@ MonoBehaviour:
     objectIdsForBronze:
     - 877&902
     objectIdsForSilver:
-    - 902&363
     - 964&877
+    - 902&363
     objectIdsForGold:
     - 964&363
     feedbackOnBronze: You literally bought the bare minimum to stay alive... Well,
