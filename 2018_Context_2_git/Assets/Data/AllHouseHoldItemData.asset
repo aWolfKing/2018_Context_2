@@ -13,17 +13,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   categories:
   - not in store
-  - Skeer
-  - "Sm\xF6ig"
-  - Anita Bath Sanitair
-  - River
-  - Joe & King Interiors
-  - Saniterra
-  - Ella Vator Electronics
-  - Nott & Allwright
-  - Lowe & Pryce
-  - Zweinstein Kitchen WitchBitches
-  - Dish It
+  - Electronics
+  - Furniture
+  - Plants
+  - Dump store
   data:
   - m_id: 0
     prefab: {fileID: 1592693614543412, guid: 0d00283f08ad6f242afe9f0ba768137d, type: 2}
@@ -47,7 +40,7 @@ MonoBehaviour:
   - m_id: 874
     prefab: {fileID: 100000, guid: 45339a5a7b00146629eadae984ecb630, type: 3}
     name: Brown Couch
-    category: 1
+    category: 2
     description: 'This old lazy couch looks it has endured a war.. of cats?
 
 
@@ -63,7 +56,7 @@ MonoBehaviour:
   - m_id: 533
     prefab: {fileID: 100000, guid: 62b0a7b8e9cac49ab86036875977e275, type: 3}
     name: White Couch
-    category: 5
+    category: 2
     description: This beautiful fancy couch even has neck support.
     purchaseCost: 140
     electricityUsage: 0
@@ -76,7 +69,7 @@ MonoBehaviour:
   - m_id: 877
     prefab: {fileID: 100000, guid: ee0ae685c1ac74251840a1f9f4360511, type: 3}
     name: Old Muffy Matras
-    category: 1
+    category: 4
     description: "You had trouble understanding the guy who sold this to you, \nso
       you\u2019re not quite sure what horrors this bed might have witnessed, \nbut
       it was a sale you just could not pass up.\n Just ignore the stains and you\u2019re
@@ -92,7 +85,7 @@ MonoBehaviour:
   - m_id: 261
     prefab: {fileID: 100000, guid: dfc58877024d544b4a52a3b2d4d12c0b, type: 3}
     name: Wooden Desk
-    category: 5
+    category: 2
     description: "This handy desk is probably where you spend most of your study\n
       stressing the fuck out. You probably will work, eat, sleep, cry and slowly \ndestroying
       your soul at this table. \nEspecially in combination with your laptop. "
@@ -107,7 +100,7 @@ MonoBehaviour:
   - m_id: 1
     prefab: {fileID: 100000, guid: 58fc43bd7f6e64a6d9a34ff0beff871a, type: 3}
     name: Big Cactus
-    category: 0
+    category: 3
     description: "It doesn\u2019t require much water, it doesn\u2019t require attention
       \nand it won\u2019t judge you if you forget about it for two months.  "
     purchaseCost: 10
@@ -224,7 +217,7 @@ MonoBehaviour:
   - m_id: 299
     prefab: {fileID: 100000, guid: ab1fdb9069528483fa1360e7d8fbe342, type: 3}
     name: Purple Carpet
-    category: 5
+    category: 4
     description: "This purple funky carpet reminds you of that odd aunt who's \nhouse
       is all purple. Nice lady, but a bit crazy in the head. \n"
     purchaseCost: 35
@@ -238,7 +231,7 @@ MonoBehaviour:
   - m_id: 950
     prefab: {fileID: 100000, guid: 3972990bf5f7345e99a50892c4a32720, type: 3}
     name: Blue Carpet
-    category: 5
+    category: 4
     description: A nice rug to keep your feet warm.
     purchaseCost: 30
     electricityUsage: 0
@@ -251,10 +244,10 @@ MonoBehaviour:
   - m_id: 743
     prefab: {fileID: 100000, guid: dd101bbf085cd4154a2e397c21e268d8, type: 3}
     name: Lamp
-    category: 8
+    category: 1
     description: Not sure if this lamp is super modern or just really ugly. Or both?
     purchaseCost: 35
-    electricityUsage: 10
+    electricityUsage: 5
     breakPercentage: 0
     repairCost: 5
     upgradesToId: -1
@@ -264,10 +257,10 @@ MonoBehaviour:
   - m_id: 650
     prefab: {fileID: 100000, guid: ce38e375236b244e0b7e0099ae6e8302, type: 3}
     name: Laptop
-    category: 7
+    category: 1
     description: 'Does what your average laptop needs to do.  '
     purchaseCost: 800
-    electricityUsage: 50
+    electricityUsage: 30
     breakPercentage: 0
     repairCost: 500
     upgradesToId: -1
@@ -277,7 +270,7 @@ MonoBehaviour:
   - m_id: 429
     prefab: {fileID: 100000, guid: 51961f5d6885a4e82a34a33243028b34, type: 3}
     name: Plant
-    category: 0
+    category: 3
     description: 'This green piece of nature sure will make your house more cozy.
 
       It also makes the air in your sweaty muffy home more breathable.'
@@ -292,9 +285,10 @@ MonoBehaviour:
   - m_id: 130
     prefab: {fileID: 100000, guid: 5a80a1ab1036d42968cc06666dbce63b, type: 3}
     name: Clock
-    category: 7
+    category: 1
     description: "This stressful countdown will make you feel that the time goes \nslower
-      if you keep looking at it."
+      if you keep looking at it. Besides, do you even need it? it uses energy and
+      you can always look on your phone or laptop."
     purchaseCost: 30
     electricityUsage: 5
     breakPercentage: 0
@@ -306,10 +300,10 @@ MonoBehaviour:
   - m_id: 135
     prefab: {fileID: 100000, guid: c4a268c7a1b484ecab269efacb8b73fc, type: 3}
     name: Wall Lamp
-    category: 0
+    category: 1
     description: Fancy lamp for at your bed, or couch, or where ever you want.
     purchaseCost: 20
-    electricityUsage: 10
+    electricityUsage: 5
     breakPercentage: 0
     repairCost: 10
     upgradesToId: -1
@@ -319,7 +313,7 @@ MonoBehaviour:
   - m_id: 196
     prefab: {fileID: 100000, guid: d33ea227b5d8c4b3f902ad28f5fe63df, type: 3}
     name: Water Cooker
-    category: 7
+    category: 1
     description: For the lazy fucks.
     purchaseCost: 15
     electricityUsage: 15
@@ -332,7 +326,7 @@ MonoBehaviour:
   - m_id: 964
     prefab: {fileID: 100000, guid: 2faccd39ebee1408481fcf12eb622535, type: 3}
     name: New Toilet
-    category: 6
+    category: 2
     description: This toilet is considered as a piece of heaven in the morning.
     purchaseCost: 55
     electricityUsage: 15
@@ -345,7 +339,7 @@ MonoBehaviour:
   - m_id: 902
     prefab: {fileID: 100000, guid: cc46f20b61a824b47a7189853936b152, type: 3}
     name: Old Toilet
-    category: 3
+    category: 2
     description: "This 'toilet' does not sit that comfortable. The water container
       \nis way to big and the water always keep running a bit."
     purchaseCost: 35
@@ -362,7 +356,7 @@ MonoBehaviour:
     category: 0
     description: "The place where your evergrowing dishes will be staying. \n"
     purchaseCost: 0
-    electricityUsage: 0
+    electricityUsage: 5
     breakPercentage: 0
     repairCost: 0
     upgradesToId: -1
@@ -372,7 +366,7 @@ MonoBehaviour:
   - m_id: 363
     prefab: {fileID: 100000, guid: 3d2e933eb8d13496cb0022fcb0adcf6a, type: 3}
     name: Fany Bed
-    category: 0
+    category: 2
     description: "A classy, stylish bed. You won\u2019t see the inside of it much
       once \ndeadline season peeks around the corner, but when you do have time\n
       for a good night\u2019s rest, this bed\u2019s got you covered"
@@ -387,7 +381,7 @@ MonoBehaviour:
   - m_id: 59
     prefab: {fileID: 100000, guid: f5469fea63e1e40c78895d9ef8ff2c99, type: 3}
     name: Small Cactus
-    category: 0
+    category: 3
     description: "The perfect plant for those that can\u2019t\n even keep the mice
       in the kitchen alive.  "
     purchaseCost: 10
@@ -401,13 +395,13 @@ MonoBehaviour:
   - m_id: 858
     prefab: {fileID: 100000, guid: fc25ff6f7d1594148aab8a9b64af97c7, type: 3}
     name: Dark Old Stove
-    category: 10
+    category: 2
     description: "This stove will murder your appetite faster than a hamster \nin
       a meatgrinder, but if your goal is to merely survive, it\u2019ll do. \nBy this
       point it\u2019s nearly ancient and sucks energy like its \nlife depends on it.
       Which, now that we think about it, it kind of does. "
     purchaseCost: 150
-    electricityUsage: 40
+    electricityUsage: 20
     breakPercentage: 0
     repairCost: 100
     upgradesToId: -1
@@ -417,7 +411,7 @@ MonoBehaviour:
   - m_id: 982
     prefab: {fileID: 100000, guid: fc3fc40758aaa4cc38d753d9388e008b, type: 3}
     name: New Stove
-    category: 0
+    category: 2
     description: "It saves energy, functions intuitively and is easy to keep clean;
       what can\u2019t it do? "
     purchaseCost: 300
@@ -431,7 +425,7 @@ MonoBehaviour:
   - m_id: 153
     prefab: {fileID: 100000, guid: 6ee1743184633451291da922cd60f7f6, type: 3}
     name: Closet
-    category: 0
+    category: 2
     description: "A roomy closet for all your storage needs. \nA bit on the pricey
       side, but it will probably last you a lifetime. "
     purchaseCost: 100
@@ -445,7 +439,7 @@ MonoBehaviour:
   - m_id: 728
     prefab: {fileID: 100000, guid: 881da659184b041c4bc825d1b51580fb, type: 3}
     name: New Big Refridgerator
-    category: 0
+    category: 1
     description: "Classy, shiny and tall. It\u2019s like a looming monolith of goodness,\n
       keeping your food nice and fresh.  "
     purchaseCost: 500
@@ -459,7 +453,7 @@ MonoBehaviour:
   - m_id: 205
     prefab: {fileID: 100000, guid: f16b8c32e51c64a3fa680a56cd32c5e8, type: 3}
     name: New Small Refridgerator
-    category: 0
+    category: 1
     description: "A bit cheaper energy-wise than it\u2019s big brother, \nbut where
       are you going to leave all that delicious chilled food now? "
     purchaseCost: 200
@@ -473,7 +467,7 @@ MonoBehaviour:
   - m_id: 683
     prefab: {fileID: 100000, guid: 40dbade3d53d04891851e81a5e2fbf9e, type: 3}
     name: Old Big Refridgerator
-    category: 10
+    category: 1
     description: "It hums menacingly while you sleep. \nIt might be sentient, might
       not. It\u2019s like the door and hinges \nunderstand what \u2018opening\u2019
       means, but just haven\u2019t quite internalized\n the concept yet. It uses up
@@ -481,7 +475,7 @@ MonoBehaviour:
       your food. \nIt's pretty affordable, though, and if you need to \nstore a fuck-ton
       of food, this beast has got you covered. "
     purchaseCost: 200
-    electricityUsage: 70
+    electricityUsage: 40
     breakPercentage: 0
     repairCost: 150
     upgradesToId: -1
@@ -491,7 +485,7 @@ MonoBehaviour:
   - m_id: 528
     prefab: {fileID: 100000, guid: f5820b7d8ad3d4b3aabb4ddaf2a2f5c8, type: 3}
     name: Old Small Refridgerator
-    category: 10
+    category: 4
     description: "Yes, it doesn\u2019t quite close as well as it used to, and yes,
       there is a \npeculiar smell coming out of it, and yes, it\u2019s about as eco-friendly
       \nas a victorian chimney, but hey: it\u2019s cheap. And in this life, you just
@@ -515,7 +509,7 @@ MonoBehaviour:
     breakPercentage: 0
     repairCost: 0
     upgradesToId: 29
-    upgradeCost: 300
+    upgradeCost: 100
     standardEffectRadius: 100
     affectedObjects: []
   - m_id: 29
@@ -534,7 +528,7 @@ MonoBehaviour:
   - m_id: 428
     prefab: {fileID: 100000, guid: 37406987ab8804dbaad9053557e0db6e, type: 3}
     name: Saloon Table
-    category: 0
+    category: 2
     description: This multifunctional table could be used as a board game or just
       as a table.
     purchaseCost: 40
@@ -548,7 +542,7 @@ MonoBehaviour:
   - m_id: 171
     prefab: {fileID: 100018, guid: 36a6a284d9c3b4714aafc8c40e25b098, type: 3}
     name: Chair
-    category: 0
+    category: 2
     description: "A decent chair. We\u2019re not sure what else to say about it. \nIt\u2019s
       a bit like that one teacher of yours; \ndependable, reliable, but utterly forgettable. "
     purchaseCost: 25
@@ -562,7 +556,7 @@ MonoBehaviour:
   - m_id: 331
     prefab: {fileID: 100000, guid: cb7f700f79dbb4f309f9812e6cb13854, type: 3}
     name: Dining Table
-    category: 0
+    category: 2
     description: Handy if guests are coming
     purchaseCost: 80
     electricityUsage: 0
@@ -575,7 +569,7 @@ MonoBehaviour:
   - m_id: 829
     prefab: {fileID: 100000, guid: 3168125bc7e6142deb33cd378a0dcf1c, type: 3}
     name: TV
-    category: 7
+    category: 1
     description: Not quite HD, but functional and reliable. To a degree.
     purchaseCost: 60
     electricityUsage: 30
@@ -588,9 +582,267 @@ MonoBehaviour:
   - m_id: 850
     prefab: {fileID: 100000, guid: c5ba1e1279b9c4ea58af11cdff50b2ab, type: 3}
     name: TV cabinet
-    category: 5
+    category: 2
     description: description
     purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 583
+    prefab: {fileID: 100000, guid: fefbf614c9b4b4ada855f650a8c1e497, type: 3}
+    name: Washing Machine
+    category: 1
+    description: 'This washing machine is quite eco friendly. Don''t forget to wash
+      it on the
+
+      eco mode though.'
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 649
+    prefab: {fileID: 100000, guid: cc37c1145274641a8872de9fb6ecf00a, type: 3}
+    name: Old Washing Machine
+    category: 4
+    description: This old machine is a monster if it comes to energy usage..
+    purchaseCost: 30
+    electricityUsage: 40
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 277
+    prefab: {fileID: 100000, guid: fb749bd8afd524c0b80dd645f38a9a36, type: 3}
+    name: CV
+    category: 1
+    description: description
+    purchaseCost: 1000
+    electricityUsage: 20
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects:
+    - affectedObjectId: -1
+      summerElectricityPercentage: 0
+      fallElectricityPercentage: 0
+      winterElectricityPercentage: 0
+      springElectricityPercentage: 0
+      effectRadius: 100
+  - m_id: 783
+    prefab: {fileID: 100000, guid: 0fa73d1f503a540d488082337f5fdce3, type: 3}
+    name: Wood Stove
+    category: 4
+    description: 'old wood stove to heat your house. Looks almost 100 year old. '
+    purchaseCost: 30
+    electricityUsage: 100
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 269
+    prefab: {fileID: 100000, guid: a2fe475b22c3f40f6a4e2decca1967c0, type: 3}
+    name: Radiator
+    category: 1
+    description: Nice radiator.
+    purchaseCost: 100
+    electricityUsage: 20
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 369
+    prefab: {fileID: 100000, guid: 450f5ca993c0c4deba41a74d4bc80d58, type: 3}
+    name: Nice Shower
+    category: 11
+    description: This shower is brand new and works perfects
+    purchaseCost: 60
+    electricityUsage: 5
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 593
+    prefab: {fileID: 100000, guid: dcb94151cc4324e75b8789987c79b7d7, type: 3}
+    name: Old shower
+    category: 13
+    description: This old shower uses a lot of water.
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 88
+    prefab: {fileID: 100000, guid: 26aba6b672b9142d3afae74625a90d6e, type: 3}
+    name: School books
+    category: 13
+    description: Some old school books from students last year. Recycle is the way
+      to go! (paper isn't though.. all those trees cut off..)
+    purchaseCost: 30
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 317
+    prefab: {fileID: 100000, guid: 8f60fff7845f845f0ba62fc62eada3a2, type: 3}
+    name: Small Dragon Cactus
+    category: 12
+    description: This little cactus looks very cute but can hurt you if he wants..
+    purchaseCost: 10
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 371
+    prefab: {fileID: 100000, guid: 2f9eea75f99cc40d78d2b7f0cdd43249, type: 3}
+    name: name
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 838
+    prefab: {fileID: 100000, guid: 01ea3a5246e364396be4697f2aa35c3c, type: 3}
+    name: name
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 501
+    prefab: {fileID: 100000, guid: c022a4a4c1ad54746b71ad6b28b9d460, type: 3}
+    name: name
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 383
+    prefab: {fileID: 100000, guid: f9f8dd66f600a465ab6242aea0033f19, type: 3}
+    name: Shirt groen
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 117
+    prefab: {fileID: 100000, guid: c06f33002687c42fc98c7772cb76803e, type: 3}
+    name: name
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 547
+    prefab: {fileID: 100000, guid: a0989b0d948524a4d972616ab399f337, type: 3}
+    name: name
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 744
+    prefab: {fileID: 100000, guid: c4dee18ceed87416e9c8fb56dd42bd88, type: 3}
+    name: Rubber Plant
+    category: 12
+    description: Nice plant that doesn't need much watering, just some love..
+    purchaseCost: 10
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 645
+    prefab: {fileID: 100000, guid: 0f1da811e845b49a5ae78db4ca524a49, type: 3}
+    name: name
+    category: 0
+    description: description
+    purchaseCost: 0
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 0
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 799
+    prefab: {fileID: 100000, guid: be48da47a1c234fc5830e29c5dc228de, type: 3}
+    name: Bookcase
+    category: 11
+    description: Nice wooden cbookcase with books you'll never read..
+    purchaseCost: 45
+    electricityUsage: 0
+    breakPercentage: 0
+    repairCost: 20
+    upgradesToId: -1
+    upgradeCost: 0
+    standardEffectRadius: 100
+    affectedObjects: []
+  - m_id: 86
+    prefab: {fileID: 100000, guid: f5469fea63e1e40c78895d9ef8ff2c99, type: 3}
+    name: Cactus family
+    category: 12
+    description: "Nice cactus family that doesn't need much watering. Only love. maybe
+      not physical love though.. \nMaybe verbally?"
+    purchaseCost: 10
     electricityUsage: 0
     breakPercentage: 0
     repairCost: 0
