@@ -511,11 +511,11 @@ MonoBehaviour:
     description: "This window is definetely better than those holes you\n had when
       you first arrived."
     purchaseCost: 20
-    electricityUsage: 15
+    electricityUsage: 500
     breakPercentage: 0
     repairCost: 0
     upgradesToId: 29
-    upgradeCost: 0
+    upgradeCost: 300
     standardEffectRadius: 100
     affectedObjects: []
   - m_id: 29
