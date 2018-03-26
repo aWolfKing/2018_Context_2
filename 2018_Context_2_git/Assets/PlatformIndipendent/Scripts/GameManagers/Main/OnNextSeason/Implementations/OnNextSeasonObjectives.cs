@@ -13,6 +13,16 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
 
     private List<ObjectivesScriptableObject.Objective> completed = new List<ObjectivesScriptableObject.Objective>();
 
+    [SerializeField] private int    bronzeCompleted = 0,
+                                    silverCompleted = 0,
+                                    goldCompleted = 0;
+
+    [SerializeField] private TMPro.TextMeshProUGUI  bronzeCompletedText = null,
+                                                    silverCompletedText = null,
+                                                    goldCompletedText = null;
+
+
+
     public override void OnBeforeChange() {
         base.OnBeforeChange();
     }
@@ -184,12 +194,15 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
             switch(r){
                 case rank.bronze:
                     t = o.feedbackOnBronze;
+                    bronzeCompleted++;
                     break;
                 case rank.silver:
                     t = o.feedbackOnSilver;
+                    silverCompleted++;
                     break;
                 case rank.gold:
                     t = o.feedbackOnGold;
+                    goldCompleted++;
                     break;
             }
 
@@ -199,6 +212,11 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
             else if (objectivesScriptableObject.objectives.IndexOf(o) == 1) {
                 objective1.text = t;
             }
+
+            bronzeCompletedText.text = bronzeCompleted.ToString();
+            silverCompletedText.text = silverCompleted.ToString();
+            goldCompletedText.text = goldCompleted.ToString();
+
         }
 
         OptionsMenu.RequestOpen();

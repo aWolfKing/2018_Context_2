@@ -72,6 +72,9 @@ public class MainGameManager : MonoBehaviour {
     public static System.Action onCashChanged = null;
 
 
+    [SerializeField] private UnityEngine.Events.UnityEvent onGameOver = null;
+
+
 
     [RuntimeInitializeOnLoadMethod]
     private static void Init(){
@@ -267,6 +270,11 @@ public class MainGameManager : MonoBehaviour {
 
             //Cash += incomePerSeason;
 
+            MonoBehaviour.print("onafter " + onSeasonChanges.Count);
+            for(int i=0; i<onSeasonChanges.Count; i++){
+                MonoBehaviour.print(onSeasonChanges[i].name);
+            }
+
             foreach (var m in onSeasonChanges) {
                 m.OnAfterChange();
             }
@@ -277,6 +285,7 @@ public class MainGameManager : MonoBehaviour {
 
     public static void GameOver(){
         MonoBehaviour.print("Game over... (implement this)");
+        _this.onGameOver.Invoke();
     }
 
 
