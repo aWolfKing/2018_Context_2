@@ -10,7 +10,9 @@ public class AudioEffectManager : MonoBehaviour {
 
 
     public AudioClip
-            objectPlaced = null;
+            objectPlaced = null,
+            buttonClicked = null,
+            missionCleared = null;
 
 
 
@@ -23,5 +25,11 @@ public class AudioEffectManager : MonoBehaviour {
             AudioSource.PlayClipAtPoint(clip, CameraControl.Camera.transform.position);
         }
     }	
+
+
+    public void ButtonClickedSound(){
+        Play(buttonClicked);
+    }
+
 
 }

@@ -45,6 +45,8 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
 
     public override void OnAfterChange() {
 
+        bool didCompleteAMission = false;
+
         for(int i=0; i<objectivesScriptableObject.objectives.Count; i++){
             var objective = objectivesScriptableObject.objectives[i];
             if(!completed.Contains(objective) && objective.seasons.Contains(MainGameManager.CurrentSeason)){
@@ -53,21 +55,28 @@ public class OnNextSeasonObjectives : OnNextSeason_monobehaviour {
 
                 if(LogicAnd_True(logic.ToArray())){
                     Reward(objective, rank.gold);
+                    didCompleteAMission = true;
                 }
                 else{
                     logic = new List<ILogic>(GetLogicsFor(objective, objective.objectIdsForSilver));
                     if(LogicAnd_True(logic.ToArray())){
                         Reward(objective, rank.silver);
+                        didCompleteAMission = true;
                     }
                     else{
                         logic = new List<ILogic>(GetLogicsFor(objective, objective.objectIdsForBronze));
                         if(LogicAnd_True(logic.ToArray())){
                             Reward(objective, rank.bronze);
+                            didCompleteAMission = true;
                         }
                     }
                 }
 
             }
+        }
+
+        if(didCompleteAMission){
+            AudioEffectManager.Play(AudioEffectManager.Instance.missionCleared);
         }
 
         base.OnAfterChange();
