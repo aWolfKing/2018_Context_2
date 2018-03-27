@@ -4849,6 +4849,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 224114147372830570, guid: 1da8cf0f632e02f4191c1806aebef8a6,
+        type: 2}
+      propertyPath: m_SizeDelta.x
+      value: 21.78
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 1da8cf0f632e02f4191c1806aebef8a6, type: 2}
   m_IsPrefabParent: 0
@@ -5238,6 +5243,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectPlaced: {fileID: 0}
+  buttonClicked: {fileID: 0}
+  missionCleared: {fileID: 0}
 --- !u!1 &612698992
 GameObject:
   m_ObjectHideFlags: 0
