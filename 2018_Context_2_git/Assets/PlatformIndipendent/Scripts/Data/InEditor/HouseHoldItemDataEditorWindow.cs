@@ -362,6 +362,21 @@ public class HouseHoldItemDataEditorWindow : EditorWindow {
 
             }
 
+            //texture
+            {
+
+                Rect mainRect = widthRect;
+                mainRect.position += new Vector2((430*2) - (fSelectedTab * 430), 260);
+
+                mainRect.position += new Vector2(mainRect.width * 0.5f - 50, 0);
+                mainRect.width = 100;
+                mainRect.height = 100;
+
+                currentEditing.sprite = EditorGUI.ObjectField(mainRect, "", currentEditing.sprite, typeof(Texture2D), false) as Texture2D;
+
+            }
+
+
 
 
 
@@ -376,7 +391,7 @@ public class HouseHoldItemDataEditorWindow : EditorWindow {
                 float heightWas = EditorStyles.toolbarButton.fixedHeight;
                 EditorStyles.toolbarButton.fixedHeight = 0;
                 int tWas = selectedTab;
-                selectedTab = GUI.Toolbar(tabbar, selectedTab, new string[] { "info", "affects", "affected by" }, EditorStyles.toolbarButton);
+                selectedTab = GUI.Toolbar(tabbar, selectedTab, new string[] { "info", "affects", "sprite" }, EditorStyles.toolbarButton);
                 if(tWas != selectedTab){
                     selectedTabWas = tWas;
                 }

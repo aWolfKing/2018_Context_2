@@ -62,6 +62,9 @@ public class HouseHoldItemData {
     }
 
 
+    public Texture2D sprite = null;
+
+
 
     public HouseHoldItemData(AllHouseHoldItemData allHouseHoldItemData){
         this.m_id = GetValidId(allHouseHoldItemData);

@@ -11,6 +11,7 @@ public class AudioEffectManager : MonoBehaviour {
 
     public AudioClip
             objectPlaced = null,
+            objectBuy = null,
             buttonClicked = null,
             missionCleared = null;
 

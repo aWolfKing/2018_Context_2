@@ -139,6 +139,16 @@ public class ShopManager : MonoBehaviour {
                 }
                 else if(child.name == _this.shopItemPreset_UI.previewTransform.name){
                     previewHolder = child;
+                    if(previewHolder != null && previewHolder.GetComponent<Image>() != null){
+                        if (previewHolder.gameObject.GetComponent<Mask>() == null) {
+                            previewHolder.gameObject.AddComponent<Mask>();
+                        }
+                        GameObject p = new GameObject();
+                        p.transform.SetParent(previewHolder);
+                        p.transform.localPosition = Vector3.zero;
+                        p.AddComponent<RectTransform>().sizeDelta = new Vector2(0.4f, 0.4f);
+                        p.AddComponent<RawImage>().texture = itemsInThisCategory[i].sprite;
+                    }
                 }
                 else if(child.name == "Item_usage (Text)"){
                     child.GetComponent<Text>().text = "Usage: " + itemsInThisCategory[i].electricityUsage;
@@ -276,7 +286,7 @@ public class ShopManager : MonoBehaviour {
 
                         }
 
-                        AudioEffectManager.Play(AudioEffectManager.Instance.objectPlaced);
+                        AudioEffectManager.Play(AudioEffectManager.Instance.objectBuy);
 
                         currently_buying = null;
                         currentlyPlacing = null;
@@ -356,6 +366,7 @@ public class ShopManager : MonoBehaviour {
                     if (canPlace) {
                         o.SetUsedDots(placementDots);
                         m.visualMaterial = HouseHoldItem_monobehaviour.VisualMaterial.normalMaterial;
+                        AudioEffectManager.Play(AudioEffectManager.Instance.objectPlaced);
                         break;
                     }
                 }

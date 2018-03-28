@@ -44,6 +44,8 @@ public class CanvasUI_Main_cs : MonoBehaviour {
         public HouseHoldItem_monobehaviour interacting = null;
         public Button upgradeButton = null;
 
+        public RawImage currentSprite = null, upgradeSprite = null;
+
         public AnimationCurve openAndClosCurve = null;
 
         public void Awake(){
@@ -67,12 +69,16 @@ public class CanvasUI_Main_cs : MonoBehaviour {
                     upgradeCostText.text = "Upgrade cost: " + interacting.HouseHoldItemData.upgradeCost.ToString();
                     upgradeButton.interactable = MainGameManager.Cash >= interacting.HouseHoldItemData.upgradeCost;
                     interaction_upgradeButton.interactable = true;
+                    upgradeSprite.texture = interacting.HouseHoldItemData.Upgrade.sprite;
+                    currentSprite.texture = interacting.HouseHoldItemData.sprite;
                 }
                 else{
                     usageBecomesText.text = "-";
                     upgradeCostText.text = "-";
                     upgradeButton.interactable = false;
                     interaction_upgradeButton.interactable = false;
+                    upgradeSprite.texture = null;
+                    currentSprite.texture = interacting.HouseHoldItemData.sprite;
                 }
             }
             else{
@@ -86,6 +92,8 @@ public class CanvasUI_Main_cs : MonoBehaviour {
                 interaction_upgradeButton.interactable = false;
                 interaction_moveButton.interactable = false;
                 interaction_removeButton.interactable = false;
+                upgradeSprite.texture = null;
+                currentSprite.texture = null;
             }
         }
     }
